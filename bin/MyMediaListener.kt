@@ -14,9 +14,11 @@
  *                  "ACTION_PLAY"
  *                  "ACTION_PAUSE"
  *                  "ACTION_PREV"
+ *                  "ACTION_VOL_UP"
+ *                  "ACTION_VOL_DOWN"
  ***********************************************/
 
-package com.example.myapplication
+package com.example.button_application
 
 import android.app.Notification
 import android.content.BroadcastReceiver
@@ -31,11 +33,16 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 
 // TODO: think of a way to store and cycle through media sessions.
-// TODO: get audio controls working using AudioManager
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
-    var audioManager: AudioManager? = getSystemService(AUDIO_SERVICE) as AudioManager?
-    val maxVolume = audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+    var volOffset: Int = 1
+
+    private val audioManager: AudioManager? by lazy {
+        getSystemService(AUDIO_SERVICE) as? AudioManager
+    }
+    private val maxVolume: Int by lazy {
+        audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC) ?: 100
+    }
 
     private val skipReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -58,6 +65,38 @@ class MyMediaListener : NotificationListenerService() {
         }
     }
 
+    private val volUpReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC,
+                newVolLevel(volOffset, "VOL_UP") ?: 50, 0)
+        }
+    }
+
+    private val volDownReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC,
+                newVolLevel(volOffset, "VOL_DOWN") ?: 50, 0)
+        }
+    }
+
+    // Returns new volume level
+    fun newVolLevel (offset: Int?, direction: String): Int? {
+        val currentVol: Int? = audioManager?.getStreamVolume(AudioManager.STREAM_MUSIC)
+        val volDown = (currentVol ?: 0) - (offset ?: 0)
+        val volUp = (currentVol ?: 0) + (offset ?: 0)
+
+        if (direction == "VOL_UP") {
+            if (volUp <= maxVolume) {
+                return volUp
+            }
+            return maxVolume
+        }
+        if (volDown >= 0) {
+            return volDown
+        }
+        return currentVol
+    }
+
     // register all receivers
     override fun onCreate() {
         super.onCreate()
@@ -66,18 +105,24 @@ class MyMediaListener : NotificationListenerService() {
         val backFilter = IntentFilter("ACTION_PREV")
         val pauseFilter = IntentFilter("ACTION_PAUSE")
         val playFilter = IntentFilter("ACTION_PLAY")
+        val volUpFilter = IntentFilter("ACTION_VOLUME_UP")
+        val volDownFilter = IntentFilter("ACTION_VOLUME_DOWN")
 
         // exclude "RECEIVER_EXPORTED" if android version is below 14
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            registerReceiver(skipReceiver, skipFilter, Context.RECEIVER_EXPORTED)
-            registerReceiver(goBackReceiver, backFilter, Context.RECEIVER_EXPORTED)
-            registerReceiver(pauseReceiver, pauseFilter, Context.RECEIVER_EXPORTED)
-            registerReceiver(playReceiver, playFilter, Context.RECEIVER_EXPORTED)
+            registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
+            registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
+            registerReceiver(pauseReceiver, pauseFilter, RECEIVER_EXPORTED)
+            registerReceiver(playReceiver, playFilter, RECEIVER_EXPORTED)
+            registerReceiver(volUpReceiver, volUpFilter, RECEIVER_EXPORTED)
+            registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
         } else {
             registerReceiver(skipReceiver, skipFilter)
             registerReceiver(goBackReceiver, backFilter)
             registerReceiver(pauseReceiver, pauseFilter)
             registerReceiver(playReceiver, playFilter)
+            registerReceiver(volUpReceiver, volUpFilter)
+            registerReceiver(volDownReceiver, volDownFilter)
         }
     }
 
@@ -89,7 +134,7 @@ class MyMediaListener : NotificationListenerService() {
             extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
         } else {
             @Suppress("DEPRECATION")
-            extras.getParcelable<MediaSession.Token>(Notification.EXTRA_MEDIA_SESSION)
+            extras.getParcelable(Notification.EXTRA_MEDIA_SESSION)
         }
 
         println("${sbn.notification.extras}")
@@ -105,5 +150,7 @@ class MyMediaListener : NotificationListenerService() {
         unregisterReceiver(goBackReceiver)
         unregisterReceiver(pauseReceiver)
         unregisterReceiver(playReceiver)
+        unregisterReceiver(volUpReceiver)
+        unregisterReceiver(volDownReceiver)
     }
 }
