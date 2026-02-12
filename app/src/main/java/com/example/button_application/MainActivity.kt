@@ -38,6 +38,8 @@ class MainActivity : ComponentActivity() {
                         onPrevClick = { sendPreviousBroadcast() },
                         onPauseClick = { sendPauseBroadcast() },
                         onPlayClick = { sendPlayBroadcast() },
+                        onNextAppClick = { sendNextAppBroadcast() },
+                        onPrevAppClick = { sendPrevAppBroadcast() },
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -75,6 +77,16 @@ class MainActivity : ComponentActivity() {
         sendBroadcast(intent)
     }
 
+    private fun sendNextAppBroadcast() {
+        val intent = Intent("ACTION_NEXT_APP")
+        sendBroadcast(intent)
+    }
+
+    private fun sendPrevAppBroadcast() {
+        val intent = Intent("ACTION_PREV_APP")
+        sendBroadcast(intent)
+    }
+
     private fun isNotificationServiceEnabled(): Boolean {
         val pkgName = packageName
         val flat = Settings.Secure.getString(contentResolver, "enabled_notification_listeners")
@@ -89,6 +101,8 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
                        onPrevClick: () -> Unit,
                        onPauseClick: () -> Unit,
                        onPlayClick: () -> Unit,
+                       onNextAppClick: () -> Unit,
+                       onPrevAppClick: () -> Unit,
                        modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize(),
@@ -112,6 +126,12 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
         }
         Button(onClick = onVolDownClick) {
             Text(text = "Volume Down")
+        }
+        Button(onClick = onNextAppClick) {
+            Text(text = "Next App")
+        }
+        Button(onClick = onPrevAppClick) {
+            Text(text = "Prev App")
         }
     }
 }
