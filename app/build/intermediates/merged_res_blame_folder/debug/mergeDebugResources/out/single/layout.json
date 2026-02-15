@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-50:/layout/info_bottom_sheet.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/info_bottom_sheet.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-50:/layout/activity_main.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-50:/layout/item_gesture_recognizer_result.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/item_gesture_recognizer_result.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-50:/layout/fragment_camera.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/fragment_camera.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-50:/layout/fragment_gallery.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/fragment_gallery.xml"
+    }
+]

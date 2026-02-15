@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_ic_baseline_photo_library_24.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/ic_baseline_photo_library_24.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/layout_activity_main.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_media_pipe_banner.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/media_pipe_banner.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_ic_plus.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/ic_plus.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_ic_minus.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/ic_minus.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/color_bg_nav_item.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/color/bg_nav_item.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_ic_baseline_photo_camera_24.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/ic_baseline_photo_camera_24.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/layout_info_bottom_sheet.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/info_bottom_sheet.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/layout_fragment_camera.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/fragment_camera.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/menu_menu_bottom_nav.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/menu/menu_bottom_nav.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_icn_chevron_up.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/icn_chevron_up.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/drawable_ic_baseline_add_24.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/drawable/ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/layout_fragment_gallery.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/fragment_gallery.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/navigation_nav_graph.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/layout_item_gesture_recognizer_result.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/item_gesture_recognizer_result.xml"
+    }
+]
