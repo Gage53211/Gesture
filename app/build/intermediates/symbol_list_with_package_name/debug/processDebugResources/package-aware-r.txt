@@ -2925,7 +2925,6 @@ id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
-id gallery_fragment
 id ghost_view
 id ghost_view_holder
 id gone

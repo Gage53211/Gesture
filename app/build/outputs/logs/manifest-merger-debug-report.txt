@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:17:1-63:12
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
 MERGED from [androidx.databinding:viewbinding:8.11.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\a116c8f02c92a01d15fd164791299935\transformed\viewbinding-8.11.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-video:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\630a7a66c2e2d0e699aa06d208d05db1\transformed\camera-video-1.4.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.camera:camera-view:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\b75e6d1128f322b9fe9df0be153571cd\transformed\camera-view-1.4.2\AndroidManifest.xml:2:1-7:12
@@ -75,32 +75,32 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\josem\.gradle\caches\8.14.3\tr
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\bdffc3fc5b9fb5d6ee4a02e45efd0126\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\e8df440e980d0b7534905a1f0bb351d5\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:19:5-51
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:19:5-51
 	xmlns:dist
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:18:5-61
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:18:5-61
 	android:versionCode
-		INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:17:11-69
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:11-69
 dist:module
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:22:5-40
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:5-40
 	dist:instant
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:22:18-37
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:18-37
 uses-feature#android.hardware.camera
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:25:5-60
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:5-60
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:25:19-57
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:19-57
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:28:5-65
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:5-65
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:28:22-62
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:22-62
 application
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:30:5-61:19
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:30:5-61:19
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
 MERGED from [androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-core:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\0bc40664034b3c4d2d53762bc89ba2cd\transformed\camera-core-1.4.2\AndroidManifest.xml:23:5-34:19
@@ -126,65 +126,65 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\fa7612597227ddd2feea1477fad0568d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:35:9-35
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:35:9-35
 	android:label
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:33:9-41
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:33:9-41
 	tools:ignore
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:38:9-35
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:38:9-35
 	android:roundIcon
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:34:9-54
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:34:9-54
 	android:icon
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:32:9-43
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:32:9-43
 	android:allowBackup
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:31:9-35
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:31:9-35
 	android:theme
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:37:9-55
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:37:9-55
 	android:taskAffinity
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:36:9-32
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:36:9-32
 service#com.google.mediapipe.examples.gesturerecognizer.MyMediaListener
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:40:9-46:19
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
 	android:exported
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:42:13-36
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:42:13-36
 	android:permission
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:41:13-87
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:41:13-87
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:40:18-96
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:18-96
 intent-filter#action:name:android.service.notification.NotificationListenerService
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:43:13-45:29
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
 action#android.service.notification.NotificationListenerService
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:44:17-99
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:17-99
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:44:25-96
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:25-96
 activity#com.google.mediapipe.examples.gesturerecognizer.MainActivity
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:47:9-60:20
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
 	android:exported
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:49:13-36
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:49:13-36
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:48:13-41
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:48:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:50:13-54:29
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:51:17-69
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:51:25-66
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:53:17-77
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:17-77
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:53:27-74
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:27-74
 meta-data#android.notch_support
-ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:57:13-59:40
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
 	android:value
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:59:17-37
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:59:17-37
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml:58:17-53
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:58:17-53
 uses-sdk
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.11.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\a116c8f02c92a01d15fd164791299935\transformed\viewbinding-8.11.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.11.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\a116c8f02c92a01d15fd164791299935\transformed\viewbinding-8.11.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.camera:camera-video:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\630a7a66c2e2d0e699aa06d208d05db1\transformed\camera-video-1.4.2\AndroidManifest.xml:5:5-44
@@ -326,9 +326,9 @@ MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\josem\.
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\e8df440e980d0b7534905a1f0bb351d5\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\e8df440e980d0b7534905a1f0bb351d5\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
 	android:targetSdkVersion
-		INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\josem\OneDrive\Documents\ExampleCodeGestureRecogizer\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
 service#androidx.camera.core.impl.MetadataHolderService
 ADDED from [androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:24:9-33:19
 MERGED from [androidx.camera:camera-core:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\0bc40664034b3c4d2d53762bc89ba2cd\transformed\camera-core-1.4.2\AndroidManifest.xml:29:9-33:78
