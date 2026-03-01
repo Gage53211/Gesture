@@ -22,9 +22,6 @@ public final class FragmentCameraBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final InfoBottomSheetBinding bottomSheetLayout;
-
-  @NonNull
   public final CoordinatorLayout cameraContainer;
 
   @NonNull
@@ -37,11 +34,9 @@ public final class FragmentCameraBinding implements ViewBinding {
   public final PreviewView viewFinder;
 
   private FragmentCameraBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull InfoBottomSheetBinding bottomSheetLayout, @NonNull CoordinatorLayout cameraContainer,
-      @NonNull OverlayView overlay, @NonNull RecyclerView recyclerviewResults,
-      @NonNull PreviewView viewFinder) {
+      @NonNull CoordinatorLayout cameraContainer, @NonNull OverlayView overlay,
+      @NonNull RecyclerView recyclerviewResults, @NonNull PreviewView viewFinder) {
     this.rootView = rootView;
-    this.bottomSheetLayout = bottomSheetLayout;
     this.cameraContainer = cameraContainer;
     this.overlay = overlay;
     this.recyclerviewResults = recyclerviewResults;
@@ -75,13 +70,6 @@ public final class FragmentCameraBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.bottom_sheet_layout;
-      View bottomSheetLayout = ViewBindings.findChildViewById(rootView, id);
-      if (bottomSheetLayout == null) {
-        break missingId;
-      }
-      InfoBottomSheetBinding binding_bottomSheetLayout = InfoBottomSheetBinding.bind(bottomSheetLayout);
-
       CoordinatorLayout cameraContainer = (CoordinatorLayout) rootView;
 
       id = R.id.overlay;
@@ -102,8 +90,8 @@ public final class FragmentCameraBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCameraBinding((CoordinatorLayout) rootView, binding_bottomSheetLayout,
-          cameraContainer, overlay, recyclerviewResults, viewFinder);
+      return new FragmentCameraBinding((CoordinatorLayout) rootView, cameraContainer, overlay,
+          recyclerviewResults, viewFinder);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

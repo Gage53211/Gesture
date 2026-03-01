@@ -2810,7 +2810,6 @@ id beginning
 id bestChoice
 id blocking
 id bottom
-id bottom_sheet_layout
 id bounce
 id bounceBoth
 id bounceEnd
@@ -2869,9 +2868,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id detection_threshold_minus
-id detection_threshold_plus
-id detection_threshold_value
 id dialog_button
 id dimensions
 id direct
@@ -2903,7 +2899,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fabGetContent
 id fade
 id fill
 id fillCenter
@@ -2946,12 +2941,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageResult
 id immediateStop
 id included
 id indeterminate
-id inference_time_label
-id inference_time_val
 id info
 id invisible
 id inward
@@ -3031,7 +3023,6 @@ id multiply
 id nav_controller_view_tag
 id nav_graph
 id nav_host_fragment_container
-id navigation
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3073,11 +3064,7 @@ id permissions_fragment
 id pin
 id position
 id postLayout
-id presence_threshold_minus
-id presence_threshold_plus
-id presence_threshold_value
 id pressed
-id progress
 id progress_circular
 id progress_horizontal
 id radio
@@ -3134,7 +3121,6 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinner_delegate
 id spline
 id split_action_bar
 id spread
@@ -3191,13 +3177,9 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
-id toolbar
 id top
 id topPanel
 id touch_outside
-id tracking_threshold_minus
-id tracking_threshold_plus
-id tracking_threshold_value
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -3207,7 +3189,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvLabel
-id tvPlaceholder
 id tvScore
 id unchecked
 id uniform
@@ -3215,8 +3196,6 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
-id videoView
-id view
 id view_finder
 id view_offset_helper
 id view_transition
@@ -3377,8 +3356,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_camera
-layout fragment_gallery
-layout info_bottom_sheet
 layout item_gesture_recognizer_result
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

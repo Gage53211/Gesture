@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/layout_activity_main.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\8.14.3\\com.google.mediapipe.examples.gesturerecognizer.app-debug-51:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\josem\\.gradle\\daemon\\8.14.3\\com.google.mediapipe.examples.gesturerecognizer.app-main-53:\\layout\\activity_main.xml"
     },
@@ -62,10 +66,6 @@
     {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\8.14.3\\com.google.mediapipe.examples.gesturerecognizer.app-debug-51:\\menu_menu_bottom_nav.xml.flat",
         "source": "C:\\Users\\josem\\.gradle\\daemon\\8.14.3\\com.google.mediapipe.examples.gesturerecognizer.app-main-53:\\menu\\menu_bottom_nav.xml"
-    },
-    {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-51:/menu_menu_bottom_nav.xml.flat",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-53:/menu/menu_bottom_nav.xml"
     },
     {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\8.14.3\\com.google.mediapipe.examples.gesturerecognizer.app-debug-51:\\color_bg_nav_item.xml.flat",

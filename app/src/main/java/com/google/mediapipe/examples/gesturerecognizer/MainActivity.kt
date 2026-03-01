@@ -39,10 +39,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
-        activityMainBinding.navigation.setupWithNavController(navController)
-        activityMainBinding.navigation.setOnNavigationItemReselectedListener {
-            // ignore the reselection
-        }
+
     }
     private fun isNotificationServiceEnabled(): Boolean {
         val pkgName = packageName
