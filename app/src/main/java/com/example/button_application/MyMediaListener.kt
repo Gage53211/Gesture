@@ -117,7 +117,7 @@ class MyMediaListener : NotificationListenerService() {
     //TODO: Could maybe be cleaned up?
     //checks for invalid tokens in tokens list
     private fun checkValidity() {
-        var invalidTokenPresent: Boolean = false
+        var invalidTokenPresent = false
         if (activeController != null) {
             for (i in 0 until tokens.size ) {
                 activeController = tokens[i]?.let { MediaController(applicationContext, it) }
@@ -140,7 +140,7 @@ class MyMediaListener : NotificationListenerService() {
     //writes all non null elements to front of new array
     private fun shiftTokens (arr: Array<MediaSession.Token?>): Array<MediaSession.Token?> {
         val newArray: Array<MediaSession.Token?> = arrayOfNulls(arr.size)
-        var pos: Int = 0
+        var pos = 0
         for (i in 0 until arr.size) {
             if (arr[i] != null) {
                 newArray[pos] = arr[i]
@@ -160,7 +160,7 @@ class MyMediaListener : NotificationListenerService() {
             if (volUp <= maxVolume) {
                 return volUp
             }
-            return maxVolume
+            return currentVol
         }
         if (volDown >= 0) {
             return volDown
@@ -236,5 +236,7 @@ class MyMediaListener : NotificationListenerService() {
         unregisterReceiver(volDownReceiver)
         unregisterReceiver(nextApplicationReceiver)
         unregisterReceiver(prevApplicationReceiver)
+
+        println("SERVICE HAS BEEN DESTROYED")
     }
 }
