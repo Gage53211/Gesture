@@ -35,14 +35,14 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 
 
-// TODO: when service is started, hook to any available media session
-//       so the user doesn't have to initially play a song to get the
-//       controls working
+// TODO: re-write so that this service uses GetActiveSessions upon creation so that
+//       the user doesn't have to play music in order to enumerate an active media session.
+
+// TODO: set up the "onBind" function to return information
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
     var volOffset: Int = 1
     private var appPos = 0
-
     private var tokens: Array<MediaSession.Token?> = arrayOfNulls(10)
 
     private val audioManager: AudioManager? by lazy {
@@ -92,8 +92,8 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             appPos += 1
             if ((appPos > (tokens.size - 1))  || (appPos < 0) || tokens[appPos] == null) {
-                appPos = 0
-                println("RESET APP POS FROM NEXT")
+                appPos -= 1
+                println("APP POS SET BACK 1")
             }
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
@@ -115,12 +115,11 @@ class MyMediaListener : NotificationListenerService() {
     }
 
     //TODO: Could maybe be cleaned up?
-    //TODO: Use more appropriate "appPos" value when invalid token(s) are present
     //checks for invalid tokens in tokens list
     private fun checkValidity() {
         var invalidTokenPresent: Boolean = false
         if (activeController != null) {
-            for (i in 0 ..< tokens.size ) {
+            for (i in 0 until tokens.size ) {
                 activeController = tokens[i]?.let { MediaController(applicationContext, it) }
                 if (tokens[i] != null && activeController?.playbackState == null) { // validity check
                     tokens[i] = null
@@ -129,7 +128,7 @@ class MyMediaListener : NotificationListenerService() {
             }
             println(tokens.contentToString())
             if (invalidTokenPresent) {
-                appPos = 0 // temp position
+                appPos = 0 // set to last position in list
                 tokens = shiftTokens(tokens)
                 activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
                 return
@@ -138,11 +137,11 @@ class MyMediaListener : NotificationListenerService() {
         }
     }
 
-    //write all non null elements to front of new array
+    //writes all non null elements to front of new array
     private fun shiftTokens (arr: Array<MediaSession.Token?>): Array<MediaSession.Token?> {
-        var newArray: Array<MediaSession.Token?> = arrayOfNulls(arr.size)
+        val newArray: Array<MediaSession.Token?> = arrayOfNulls(arr.size)
         var pos: Int = 0
-        for (i in 0..< arr.size) {
+        for (i in 0 until arr.size) {
             if (arr[i] != null) {
                 newArray[pos] = arr[i]
                 pos += 1
@@ -172,6 +171,7 @@ class MyMediaListener : NotificationListenerService() {
     // register all receivers
     override fun onCreate() {
         super.onCreate()
+        appPos = 0
 
         val skipFilter = IntentFilter("ACTION_SKIP")
         val backFilter = IntentFilter("ACTION_PREV")
@@ -182,27 +182,15 @@ class MyMediaListener : NotificationListenerService() {
         val nextAppFiler = IntentFilter("ACTION_NEXT_APP")
         val prevAppFilter = IntentFilter("ACTION_PREV_APP")
 
-        // exclude "RECEIVER_EXPORTED" if android version is below 14
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
-            registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
-            registerReceiver(pauseReceiver, pauseFilter, RECEIVER_EXPORTED)
-            registerReceiver(playReceiver, playFilter, RECEIVER_EXPORTED)
-            registerReceiver(volUpReceiver, volUpFilter, RECEIVER_EXPORTED)
-            registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
-            registerReceiver(nextApplicationReceiver, nextAppFiler, RECEIVER_EXPORTED)
-            registerReceiver(prevApplicationReceiver, prevAppFilter, RECEIVER_EXPORTED)
+        registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
+        registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
+        registerReceiver(pauseReceiver, pauseFilter, RECEIVER_EXPORTED)
+        registerReceiver(playReceiver, playFilter, RECEIVER_EXPORTED)
+        registerReceiver(volUpReceiver, volUpFilter, RECEIVER_EXPORTED)
+        registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
+        registerReceiver(nextApplicationReceiver, nextAppFiler, RECEIVER_EXPORTED)
+        registerReceiver(prevApplicationReceiver, prevAppFilter, RECEIVER_EXPORTED)
 
-        } else {
-            registerReceiver(skipReceiver, skipFilter)
-            registerReceiver(goBackReceiver, backFilter)
-            registerReceiver(pauseReceiver, pauseFilter)
-            registerReceiver(playReceiver, playFilter)
-            registerReceiver(volUpReceiver, volUpFilter)
-            registerReceiver(volDownReceiver, volDownFilter)
-            registerReceiver(nextApplicationReceiver, nextAppFiler)
-            registerReceiver(prevApplicationReceiver, prevAppFilter)
-        }
     }
 
 
@@ -219,18 +207,19 @@ class MyMediaListener : NotificationListenerService() {
         // loop until either null is found or token is found
         // if end of list is reached, replace end with token
         if (token != null) {
-            for (i in 0..< tokens.size) {
+            for (i in 0 until tokens.size) {
                 if (token == tokens[i]) {
                     break
                 }
-                if (tokens[i] == null) {
+                if (tokens[i] == null || i == tokens.size - 1) {
                     tokens[i] = token
+                    appPos = i
                     break
                 }
             }
             println(tokens.contentToString())
-            if (activeController == null && tokens[0] != null) {
-                activeController = tokens[0]?.let { MediaController(applicationContext, it) }
+            if (tokens[appPos] != null) {
+                activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
             }
         }
     }
