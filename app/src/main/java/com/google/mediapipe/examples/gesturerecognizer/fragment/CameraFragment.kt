@@ -238,8 +238,11 @@ class CameraFragment : Fragment(),
     // OverlayView. Only one result is expected at a time. If two or more
     // hands are seen in the camera frame, only one will be processed.
     //Should control phone using gestures
+    //Delays for different controls volume is 500ms delay while others have a one second delay
     private var lastgestureseen = 0L
     private var gesturedelay = 1000L
+    private var volumedelay = 500L
+    private var nextandprevdelay = 2000L
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
     ) {
@@ -249,23 +252,30 @@ class CameraFragment : Fragment(),
                 val gestureCategories = resultBundle.results.first().gestures()
                 val gestureResult = gestureCategories.firstOrNull()?.firstOrNull()
                 val timestart = System.currentTimeMillis()
-                if (gestureCategories.isNotEmpty() && (timestart - lastgestureseen) > gesturedelay) {
+                val currentdelay =when(gestureResult?.categoryName()){
+                    "Thumb_Up" -> volumedelay
+                    "Thumb_Down" -> volumedelay
+                    "Pointing_Up" -> nextandprevdelay
+                    "Victory" -> nextandprevdelay
+                    else -> gesturedelay
+                }
+                if (gestureCategories.isNotEmpty() && (timestart - lastgestureseen) > currentdelay) {
                     lastgestureseen = timestart
                     when (gestureResult?.categoryName()){
-                        "Thumb_Up" -> volumeup()
-                        "Thumb_Down" -> volumedown()
                         "Closed_Fist" ->pause()
                         "Open_Palm" -> play()
+                        "Thumb_Up" -> volumeup()
+                        "Thumb_Down" -> volumedown()
+                        "Pointing_Up" -> prev()
+                        "Victory" -> skip()
+                        "I_Love_You" -> next()
                     }
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
                     )
-                } else {
+                } else{
                     gestureRecognizerResultAdapter.updateResults(emptyList())
                 }
-
-
-
                 // Pass necessary information to OverlayView for drawing on the canvas
                 fragmentCameraBinding.overlay.setResults(
                     resultBundle.results.first(),
@@ -295,6 +305,20 @@ class CameraFragment : Fragment(),
         val intentplay = Intent("ACTION_PLAY")
         context?.sendBroadcast(intentplay)
     }
+    private fun skip(){
+        val intentskip = Intent("ACTION_SKIP")
+        context?.sendBroadcast(intentskip)
+    }
+    private fun prev(){
+        val intentprev = Intent("ACTION_PREV")
+        context?.sendBroadcast(intentprev)
+    }
+    private fun next() {
+        val intentnext = Intent("ACTION_NEXT_APP")
+        context?.sendBroadcast(intentnext)
+    }
+
+
 
     override fun onError(error: String, errorCode: Int) {
         activity?.runOnUiThread {

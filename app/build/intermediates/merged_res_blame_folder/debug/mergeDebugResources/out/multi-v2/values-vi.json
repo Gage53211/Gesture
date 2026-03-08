@@ -4,41 +4,7 @@
             "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-49:/values-vi/values-vi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\motoe\\.gradle\\caches\\8.14.3\\transforms\\04d3ea057092b1ff9489a3a0b8ead695\\transformed\\navigation-ui-2.5.3\\res\\values-vi\\values-vi.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,163",
-                        "endColumns": "107,112",
-                        "endOffsets": "158,271"
-                    },
-                    "to": {
-                        "startLines": "89,90",
-                        "startColumns": "4,4",
-                        "startOffsets": "7364,7472",
-                        "endColumns": "107,112",
-                        "endOffsets": "7467,7580"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\motoe\\.gradle\\caches\\8.14.3\\transforms\\fa7612597227ddd2feea1477fad0568d\\transformed\\core-1.8.0\\res\\values-vi\\values-vi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "93",
-                        "startColumns": "4",
-                        "startOffsets": "7748",
-                        "endColumns": "100",
-                        "endOffsets": "7844"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\motoe\\.gradle\\caches\\8.14.3\\transforms\\072d6907e70c77ca49f3cb64b4de6cc8\\transformed\\appcompat-1.5.1\\res\\values-vi\\values-vi.xml",
+                    "source": "C:\\Users\\josem\\.gradle\\caches\\8.14.3\\transforms\\072d6907e70c77ca49f3cb64b4de6cc8\\transformed\\appcompat-1.5.1\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\motoe\\.gradle\\caches\\8.14.3\\transforms\\b4b944666a9b4b78d2521bf42ad79b29\\transformed\\material-1.7.0\\res\\values-vi\\values-vi.xml",
+                    "source": "C:\\Users\\josem\\.gradle\\caches\\8.14.3\\transforms\\fa7612597227ddd2feea1477fad0568d\\transformed\\core-1.8.0\\res\\values-vi\\values-vi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "93",
+                        "startColumns": "4",
+                        "startOffsets": "7748",
+                        "endColumns": "100",
+                        "endOffsets": "7844"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josem\\.gradle\\caches\\8.14.3\\transforms\\b4b944666a9b4b78d2521bf42ad79b29\\transformed\\material-1.7.0\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,91",
                         "endColumns": "12,77,98,113,79,62,93,73,58,85,60,57,63,60,53,116,56,59,53,74,126,83,77,129,83,77,90,50,50,65,67,75,80,78,74,72,75,88,76,90,93,73,69,92,48,65,84,85,61,63,62,98,104,97,104,54,54,77",
                         "endOffsets": "310,3081,3180,3294,3374,3437,3531,3605,3664,3750,3811,3869,3933,3994,4048,4165,4222,4282,4336,4411,4538,4622,4700,4830,4914,4992,5083,5134,5185,5251,5319,5395,5476,5555,5630,5703,5779,5868,5945,6036,6130,6204,6274,6367,6416,6482,6567,6653,6715,6779,6842,6941,7046,7144,7249,7304,7359,7658"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josem\\.gradle\\caches\\8.14.3\\transforms\\04d3ea057092b1ff9489a3a0b8ead695\\transformed\\navigation-ui-2.5.3\\res\\values-vi\\values-vi.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,163",
+                        "endColumns": "107,112",
+                        "endOffsets": "158,271"
+                    },
+                    "to": {
+                        "startLines": "89,90",
+                        "startColumns": "4,4",
+                        "startOffsets": "7364,7472",
+                        "endColumns": "107,112",
+                        "endOffsets": "7467,7580"
                     }
                 }
             ]
