@@ -15,4 +15,6 @@ Thumbs Up - Volume Up
 
 Thumbs Down - Volume Down
 
+ILoveYou - Next Application
+
 Disclamer: We do not own the Gesture Recoginzer Model nor claim to own it is Google's property and some of the code is also property of Googles medipipe examples andoroid app directory. This app follows googles own statement, "You can use the app as a starting point for your own Android app"
