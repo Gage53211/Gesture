@@ -268,7 +268,7 @@ class CameraFragment : Fragment(),
                         "Thumb_Down" -> volumedown()
                         "Pointing_Up" -> prev()
                         "Victory" -> skip()
-                        "I_Love_You" -> next()
+                        "ILoveYou" -> next()
                     }
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
@@ -317,7 +317,6 @@ class CameraFragment : Fragment(),
         val intentnext = Intent("ACTION_NEXT_APP")
         context?.sendBroadcast(intentnext)
     }
-
 
 
     override fun onError(error: String, errorCode: Int) {
