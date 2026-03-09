@@ -22,7 +22,6 @@
 
 package com.example.button_application
 
-import android.os.Build
 import android.app.Notification
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -34,10 +33,6 @@ import android.media.session.MediaSession
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 
-
-// TODO: re-write so that this service uses GetActiveSessions upon creation so that
-//       the user doesn't have to play music in order to enumerate an active media session.
-
 // TODO: set up the "onBind" function to return information
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
@@ -48,6 +43,7 @@ class MyMediaListener : NotificationListenerService() {
     private val audioManager: AudioManager? by lazy {
         getSystemService(AUDIO_SERVICE) as? AudioManager
     }
+
     private val maxVolume: Int by lazy {
         audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC) ?: 100
     }
@@ -92,8 +88,9 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             appPos += 1
             if ((appPos > (tokens.size - 1))  || (appPos < 0) || tokens[appPos] == null) {
-                appPos -= 1
-                println("APP POS SET BACK 1")
+                //appPos -= 1
+                appPos = 0
+                println("RESET APP POS FROM NEXT")
             }
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
@@ -111,6 +108,49 @@ class MyMediaListener : NotificationListenerService() {
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
             checkValidity()
+        }
+    }
+
+    // register all receivers
+    override fun onCreate() {
+        super.onCreate()
+        appPos = 0
+
+        val skipFilter = IntentFilter("ACTION_SKIP")
+        val backFilter = IntentFilter("ACTION_PREV")
+        val pauseFilter = IntentFilter("ACTION_PAUSE")
+        val playFilter = IntentFilter("ACTION_PLAY")
+        val volUpFilter = IntentFilter("ACTION_VOLUME_UP")
+        val volDownFilter = IntentFilter("ACTION_VOLUME_DOWN")
+        val nextAppFiler = IntentFilter("ACTION_NEXT_APP")
+        val prevAppFilter = IntentFilter("ACTION_PREV_APP")
+
+        registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
+        registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
+        registerReceiver(pauseReceiver, pauseFilter, RECEIVER_EXPORTED)
+        registerReceiver(playReceiver, playFilter, RECEIVER_EXPORTED)
+        registerReceiver(volUpReceiver, volUpFilter, RECEIVER_EXPORTED)
+        registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
+        registerReceiver(nextApplicationReceiver, nextAppFiler, RECEIVER_EXPORTED)
+        registerReceiver(prevApplicationReceiver, prevAppFilter, RECEIVER_EXPORTED)
+
+    }
+
+    // checks if any currently posted notifications have media session tokens upon startup
+    override fun onListenerConnected() {
+        val notifications = activeNotifications
+        for (i in 0 until notifications.size) {
+            val extras = notifications[i].notification.extras
+            val token = extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
+            if (token != null) {
+                tokens[i] = token
+            }
+        }
+        tokens = shiftTokens(tokens)
+        println("INITIAL TOKENS-----------------------:")
+        println(tokens.contentToString())
+        if (tokens[0] != null) {
+            activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
         }
     }
 
@@ -168,42 +208,12 @@ class MyMediaListener : NotificationListenerService() {
         return currentVol
     }
 
-    // register all receivers
-    override fun onCreate() {
-        super.onCreate()
-        appPos = 0
-
-        val skipFilter = IntentFilter("ACTION_SKIP")
-        val backFilter = IntentFilter("ACTION_PREV")
-        val pauseFilter = IntentFilter("ACTION_PAUSE")
-        val playFilter = IntentFilter("ACTION_PLAY")
-        val volUpFilter = IntentFilter("ACTION_VOLUME_UP")
-        val volDownFilter = IntentFilter("ACTION_VOLUME_DOWN")
-        val nextAppFiler = IntentFilter("ACTION_NEXT_APP")
-        val prevAppFilter = IntentFilter("ACTION_PREV_APP")
-
-        registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
-        registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
-        registerReceiver(pauseReceiver, pauseFilter, RECEIVER_EXPORTED)
-        registerReceiver(playReceiver, playFilter, RECEIVER_EXPORTED)
-        registerReceiver(volUpReceiver, volUpFilter, RECEIVER_EXPORTED)
-        registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
-        registerReceiver(nextApplicationReceiver, nextAppFiler, RECEIVER_EXPORTED)
-        registerReceiver(prevApplicationReceiver, prevAppFilter, RECEIVER_EXPORTED)
-
-    }
-
-
     // upon receiving a notification that music is playing from some application
     // we get the token with that notification and use it to create a media controller
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         val extras = sbn.notification.extras
-        val token = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            extras.getParcelable(Notification.EXTRA_MEDIA_SESSION)
-        }
+        val token = extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
+
         // loop until either null is found or token is found
         // if end of list is reached, replace end with token
         if (token != null) {
@@ -238,5 +248,7 @@ class MyMediaListener : NotificationListenerService() {
         unregisterReceiver(prevApplicationReceiver)
 
         println("SERVICE HAS BEEN DESTROYED")
+    }
+}
     }
 }
