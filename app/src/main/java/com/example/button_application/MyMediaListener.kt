@@ -250,5 +250,3 @@ class MyMediaListener : NotificationListenerService() {
         println("SERVICE HAS BEEN DESTROYED")
     }
 }
-    }
-}
