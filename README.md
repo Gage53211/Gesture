@@ -37,3 +37,7 @@ ILoveYou - Next Application
 
 ![I_Love_You](https://github.com/user-attachments/assets/43bfd083-1b48-40c7-9cff-908e3d88a16a)
 
+How to Use-
+In order to use the app and for the Mediapipe model to interact with the Android device, it needs special restricted permissions. 
+The app should direct you to the settings for you to turn them on, but you may need to manually allow permissions. After permissions are given, the app takes from the active
+media players, so if you were not listening to music, you would need to start up the music player to interact with it.
