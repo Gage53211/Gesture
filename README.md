@@ -34,5 +34,6 @@ Thumbs Down - Volume Down
 
 
 ILoveYou - Next Application
+
 ![I_Love_You](https://github.com/user-attachments/assets/43bfd083-1b48-40c7-9cff-908e3d88a16a)
 
