@@ -5,28 +5,34 @@ They are as follows
 
 Open Palm-Play music
 
-![Open_Palm](https://github.com/user-attachments/assets/eba34acb-c087-4da7-ba07-2d589d098a38)
+![Open_Palm](https://github.com/user-attachments/assets/d377c8a4-d126-4e67-939b-de20c0cec7dd)
+
 
 Closed fist-Pause music
 
-![Fist](https://github.com/user-attachments/assets/7b696a56-a236-4519-94fd-54b2b076a479)
+![Fist](https://github.com/user-attachments/assets/182448ab-a959-4325-a9aa-55a95a7437ac)
+
 
 Pointing up- Previous song
 
-![pointing_up](https://github.com/user-attachments/assets/43207281-b326-45a0-b00d-663c750c737b)
+![pointing_up](https://github.com/user-attachments/assets/c5b0a74d-8ce4-4d12-9f8b-f603e059ce12)
+
 
 Peace sign or victory- Next Song
 
-![Victory](https://github.com/user-attachments/assets/b94442e3-1ed7-4fb5-893b-d64f70cb5304)
+![Victory](https://github.com/user-attachments/assets/3b3540c3-3dc9-471f-af7a-b27e9884fb1b)
+
 
 Thumbs Up - Volume Up
 
-![Thumb_Up](https://github.com/user-attachments/assets/0ca4bdea-ea2c-490d-b055-ad153cc628dc)
+![Thumb_Up](https://github.com/user-attachments/assets/0d2bc6b3-4df1-4313-8b38-bdaf9d8d2121)
+
 
 Thumbs Down - Volume Down
 
-![Thumb_Down](https://github.com/user-attachments/assets/80c1307d-4deb-4791-ad02-74b41df4736c)
+![Thumb_Down](https://github.com/user-attachments/assets/ef2266cd-4415-421a-a7ca-207cefa90ec7)
+
 
 ILoveYou - Next Application
+![I_Love_You](https://github.com/user-attachments/assets/43bfd083-1b48-40c7-9cff-908e3d88a16a)
 
-![I_Love_You](https://github.com/user-attachments/assets/62de48da-8a41-4d8e-93b1-96e52e449f85)
