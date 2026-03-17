@@ -1,0 +1,196 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3    ~ Copyright 2022 The TensorFlow Authors. All Rights Reserved.
+4    ~
+5    ~ Licensed under the Apache License, Version 2.0 (the "License");
+6    ~ you may not use this file except in compliance with the License.
+7    ~ You may obtain a copy of the License at
+8    ~
+9    ~       http://www.apache.org/licenses/LICENSE-2.0
+10    ~
+11    ~ Unless required by applicable law or agreed to in writing, software
+12    ~ distributed under the License is distributed on an "AS IS" BASIS,
+13    ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14    ~ See the License for the specific language governing permissions and
+15    ~ limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    xmlns:dist="http://schemas.android.com/apk/distribution"
+19    package="com.google.mediapipe.examples.gesturerecognizer"
+20    android:versionCode="1"
+21    android:versionName="1.0" >
+22
+23    <uses-sdk
+24        android:minSdkVersion="33"
+25        android:targetSdkVersion="36" />
+26
+27    <!-- Enable instant app support -->
+28    <dist:module dist:instant="true" />
+28-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:5-40
+28-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:18-37
+29
+30    <!-- Declare features -->
+31    <uses-feature android:name="android.hardware.camera" />
+31-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:5-60
+31-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:19-57
+32
+33    <!-- Declare permissions -->
+34    <uses-permission android:name="android.permission.CAMERA" />
+34-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:5-65
+34-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:22-62
+35
+36    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+37    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+38    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+38-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:5-79
+38-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:22-76
+39    <uses-permission android:name="android.permission.INTERNET" />
+39-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
+39-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:22-64
+40
+41    <application
+41-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
+42        android:allowBackup="true"
+42-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:31:9-35
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.8.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\fa7612597227ddd2feea1477fad0568d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+44        android:debuggable="true"
+45        android:extractNativeLibs="false"
+46        android:icon="@mipmap/ic_launcher"
+46-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:32:9-43
+47        android:label="@string/app_name"
+47-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:33:9-41
+48        android:roundIcon="@mipmap/ic_launcher_round"
+48-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:34:9-54
+49        android:supportsRtl="true"
+49-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:35:9-35
+50        android:taskAffinity=""
+50-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:36:9-32
+51        android:testOnly="true"
+52        android:theme="@style/Theme.GestureRecognizer" >
+52-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:37:9-55
+53        <service
+53-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
+54            android:name="com.google.mediapipe.examples.gesturerecognizer.MyMediaListener"
+54-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:18-96
+55            android:exported="true"
+55-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:42:13-36
+56            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+56-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:41:13-87
+57            <intent-filter>
+57-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
+58                <action android:name="android.service.notification.NotificationListenerService" />
+58-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:17-99
+58-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:25-96
+59            </intent-filter>
+60        </service>
+61
+62        <activity
+62-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
+63            android:name="com.google.mediapipe.examples.gesturerecognizer.MainActivity"
+63-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:48:13-41
+64            android:exported="true" >
+64-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:49:13-36
+65            <intent-filter>
+65-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:17-69
+66-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:17-77
+68-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:27-74
+69            </intent-filter>
+70
+71            <!-- Declare notch support -->
+72            <meta-data
+72-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
+73                android:name="android.notch_support"
+73-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:58:17-53
+74                android:value="true" />
+74-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:59:17-37
+75        </activity>
+76
+77        <service
+77-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:24:9-33:19
+78            android:name="androidx.camera.core.impl.MetadataHolderService"
+78-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:25:13-75
+79            android:enabled="false"
+79-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:26:13-36
+80            android:exported="false" >
+80-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:27:13-37
+81            <meta-data
+81-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:30:13-32:89
+82                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+82-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:31:17-103
+83                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+83-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:32:17-86
+84        </service>
+85
+86        <uses-library
+86-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:23:9-25:40
+87            android:name="androidx.window.extensions"
+87-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:24:13-54
+88            android:required="false" />
+88-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:25:13-37
+89        <uses-library
+89-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:26:9-28:40
+90            android:name="androidx.window.sidecar"
+90-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:27:13-51
+91            android:required="false" />
+91-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:28:13-37
+92
+93        <provider
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+94            android:name="androidx.startup.InitializationProvider"
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+95            android:authorities="com.google.mediapipe.examples.gesturerecognizer.androidx-startup"
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+96            android:exported="false" >
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+97            <meta-data
+97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+99                android:value="androidx.startup" />
+99-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+100            <meta-data
+100-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\93c49621d5b8eb04e11b99f9a8ee2f54\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+101                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+101-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\93c49621d5b8eb04e11b99f9a8ee2f54\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+102                android:value="androidx.startup" />
+102-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\93c49621d5b8eb04e11b99f9a8ee2f54\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+103        </provider>
+104
+105        <service
+105-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:29:9-35:19
+106            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+106-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:30:13-103
+107            android:exported="false" >
+107-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:31:13-37
+108            <meta-data
+108-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:32:13-34:39
+109                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+109-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:33:17-94
+110                android:value="cct" />
+110-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:34:17-36
+111        </service>
+112        <service
+112-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:26:9-30:19
+113            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+113-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:27:13-117
+114            android:exported="false"
+114-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:28:13-37
+115            android:permission="android.permission.BIND_JOB_SERVICE" >
+115-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:29:13-69
+116        </service>
+117
+118        <receiver
+118-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:32:9-34:40
+119            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+119-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:33:13-132
+120            android:exported="false" />
+120-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:34:13-37
+121    </application>
+122
+123</manifest>
