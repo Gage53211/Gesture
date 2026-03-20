@@ -26,13 +26,6 @@ dimen bottom_sheet_text_size
 dimen fab_margin
 dimen round_button_medium
 dimen stroke_small
-drawable ic_baseline_add_24
-drawable ic_baseline_photo_camera_24
-drawable ic_baseline_photo_library_24
-drawable ic_minus
-drawable ic_plus
-drawable icn_chevron_up
-drawable media_pipe_banner
 id action_camera_to_permissions
 id action_permissions_to_camera
 id camera_container
@@ -49,7 +42,6 @@ integer bottom_sheet_control_text_min_ems
 layout activity_main
 layout fragment_camera
 layout item_gesture_recognizer_result
-menu menu_bottom_nav
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph

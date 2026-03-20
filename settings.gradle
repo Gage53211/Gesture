@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "MP Gesture Recognizer"
+rootProject.name = "GestureMusic"
 include ':app'

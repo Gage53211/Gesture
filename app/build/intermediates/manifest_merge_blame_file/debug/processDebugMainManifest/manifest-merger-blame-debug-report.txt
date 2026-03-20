@@ -39,158 +39,211 @@
 34-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:5-65
 34-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:22-62
 35
-36    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-37    <!-- <uses-sdk android:minSdkVersion="14"/> -->
-38    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-38-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:5-79
-38-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:22-76
-39    <uses-permission android:name="android.permission.INTERNET" />
-39-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
-39-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:22-64
-40
-41    <application
-41-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
-42        android:allowBackup="true"
-42-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:31:9-35
-43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-43-->[androidx.core:core:1.8.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\fa7612597227ddd2feea1477fad0568d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
-44        android:debuggable="true"
-45        android:extractNativeLibs="false"
-46        android:icon="@mipmap/ic_launcher"
-46-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:32:9-43
-47        android:label="@string/app_name"
-47-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:33:9-41
-48        android:roundIcon="@mipmap/ic_launcher_round"
-48-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:34:9-54
-49        android:supportsRtl="true"
-49-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:35:9-35
-50        android:taskAffinity=""
-50-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:36:9-32
-51        android:testOnly="true"
-52        android:theme="@style/Theme.GestureRecognizer" >
-52-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:37:9-55
-53        <service
-53-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
-54            android:name="com.google.mediapipe.examples.gesturerecognizer.MyMediaListener"
-54-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:18-96
-55            android:exported="true"
-55-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:42:13-36
-56            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-56-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:41:13-87
-57            <intent-filter>
-57-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
-58                <action android:name="android.service.notification.NotificationListenerService" />
-58-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:17-99
-58-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:25-96
-59            </intent-filter>
-60        </service>
-61
-62        <activity
-62-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
-63            android:name="com.google.mediapipe.examples.gesturerecognizer.MainActivity"
-63-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:48:13-41
-64            android:exported="true" >
-64-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:49:13-36
-65            <intent-filter>
-65-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
-66                <action android:name="android.intent.action.MAIN" />
-66-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:17-69
-66-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:25-66
-67
-68                <category android:name="android.intent.category.LAUNCHER" />
-68-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:17-77
-68-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:27-74
-69            </intent-filter>
-70
-71            <!-- Declare notch support -->
-72            <meta-data
-72-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
-73                android:name="android.notch_support"
-73-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:58:17-53
-74                android:value="true" />
-74-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:59:17-37
-75        </activity>
-76
-77        <service
-77-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:24:9-33:19
-78            android:name="androidx.camera.core.impl.MetadataHolderService"
-78-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:25:13-75
-79            android:enabled="false"
-79-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:26:13-36
-80            android:exported="false" >
-80-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:27:13-37
-81            <meta-data
-81-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:30:13-32:89
-82                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-82-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:31:17-103
-83                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-83-->[androidx.camera:camera-camera2:1.4.2] C:\Users\josem\.gradle\caches\8.14.3\transforms\c87cbf6e1fe255921da1a18299ab2448\transformed\camera-camera2-1.4.2\AndroidManifest.xml:32:17-86
-84        </service>
-85
-86        <uses-library
-86-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:23:9-25:40
-87            android:name="androidx.window.extensions"
-87-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:24:13-54
-88            android:required="false" />
-88-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:25:13-37
-89        <uses-library
-89-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:26:9-28:40
-90            android:name="androidx.window.sidecar"
-90-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:27:13-51
-91            android:required="false" />
-91-->[androidx.window:window:1.1.0-alpha03] C:\Users\josem\.gradle\caches\8.14.3\transforms\350e129e828195200c4aa2d11936f5cc\transformed\window-1.1.0-alpha03\AndroidManifest.xml:28:13-37
-92
-93        <provider
-93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-94            android:name="androidx.startup.InitializationProvider"
-94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-95            android:authorities="com.google.mediapipe.examples.gesturerecognizer.androidx-startup"
-95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-96            android:exported="false" >
-96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-97            <meta-data
-97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-98                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-99                android:value="androidx.startup" />
-99-->[androidx.emoji2:emoji2:1.2.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\3584be5ec79104437951997acbe379e3\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-100            <meta-data
-100-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\93c49621d5b8eb04e11b99f9a8ee2f54\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-101                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-101-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\93c49621d5b8eb04e11b99f9a8ee2f54\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-102                android:value="androidx.startup" />
-102-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\josem\.gradle\caches\8.14.3\transforms\93c49621d5b8eb04e11b99f9a8ee2f54\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-103        </provider>
-104
-105        <service
-105-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:29:9-35:19
-106            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-106-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:30:13-103
-107            android:exported="false" >
-107-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:31:13-37
-108            <meta-data
-108-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:32:13-34:39
-109                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-109-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:33:17-94
-110                android:value="cct" />
-110-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\1be6a57e725e8543d9bffaef88f61ced\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:34:17-36
-111        </service>
-112        <service
-112-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:26:9-30:19
-113            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-113-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:27:13-117
-114            android:exported="false"
-114-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:28:13-37
-115            android:permission="android.permission.BIND_JOB_SERVICE" >
-115-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:29:13-69
-116        </service>
-117
-118        <receiver
-118-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:32:9-34:40
-119            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-119-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:33:13-132
-120            android:exported="false" />
-120-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\8.14.3\transforms\ef89f41b04fbcc9704b8261c88e651b3\transformed\transport-runtime-3.1.0\AndroidManifest.xml:34:13-37
-121    </application>
-122
-123</manifest>
+36    <permission
+36-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
+37        android:name="com.google.mediapipe.examples.gesturerecognizer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+37-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:23:9-81
+38        android:protectionLevel="signature" />
+38-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:24:9-44
+39
+40    <uses-permission android:name="com.google.mediapipe.examples.gesturerecognizer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+40-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:5-97
+40-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:26:22-94
+41    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+42    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+42-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:5-79
+42-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:25:22-76
+43    <uses-permission android:name="android.permission.INTERNET" />
+43-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:5-67
+43-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:22-64
+44
+45    <application
+45-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
+46        android:allowBackup="true"
+46-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:31:9-35
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
+48        android:debuggable="true"
+49        android:extractNativeLibs="false"
+50        android:icon="@mipmap/ic_launcher"
+50-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:32:9-43
+51        android:label="@string/app_name"
+51-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:33:9-41
+52        android:roundIcon="@mipmap/ic_launcher_round"
+52-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:34:9-54
+53        android:supportsRtl="true"
+53-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:35:9-35
+54        android:taskAffinity=""
+54-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:36:9-32
+55        android:testOnly="true"
+56        android:theme="@style/Theme.GestureRecognizer" >
+56-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:37:9-55
+57        <service
+57-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
+58            android:name="com.google.mediapipe.examples.gesturerecognizer.MyMediaListener"
+58-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:18-96
+59            android:exported="true"
+59-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:42:13-36
+60            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+60-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:41:13-87
+61            <intent-filter>
+61-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
+62                <action android:name="android.service.notification.NotificationListenerService" />
+62-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:17-99
+62-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:25-96
+63            </intent-filter>
+64        </service>
+65
+66        <activity
+66-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
+67            android:name="com.google.mediapipe.examples.gesturerecognizer.MainActivity"
+67-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:48:13-41
+68            android:exported="true" >
+68-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:49:13-36
+69            <intent-filter>
+69-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
+70                <action android:name="android.intent.action.MAIN" />
+70-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:17-69
+70-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:25-66
+71
+72                <category android:name="android.intent.category.LAUNCHER" />
+72-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:17-77
+72-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:27-74
+73            </intent-filter>
+74
+75            <!-- Declare notch support -->
+76            <meta-data
+76-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
+77                android:name="android.notch_support"
+77-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:58:17-53
+78                android:value="true" />
+78-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:59:17-37
+79        </activity>
+80
+81        <service
+81-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:24:9-33:19
+82            android:name="androidx.camera.core.impl.MetadataHolderService"
+82-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:25:13-75
+83            android:enabled="false"
+83-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:26:13-36
+84            android:exported="false" >
+84-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:27:13-37
+85            <meta-data
+85-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:30:13-32:89
+86                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+86-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:31:17-103
+87                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+87-->[androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:32:17-86
+88        </service>
+89
+90        <uses-library
+90-->[androidx.window:window:1.5.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\b22d7201279b8b4a48334049fb5ed71d\workspace\transformed\window-1.5.1\AndroidManifest.xml:23:9-25:40
+91            android:name="androidx.window.extensions"
+91-->[androidx.window:window:1.5.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\b22d7201279b8b4a48334049fb5ed71d\workspace\transformed\window-1.5.1\AndroidManifest.xml:24:13-54
+92            android:required="false" />
+92-->[androidx.window:window:1.5.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\b22d7201279b8b4a48334049fb5ed71d\workspace\transformed\window-1.5.1\AndroidManifest.xml:25:13-37
+93        <uses-library
+93-->[androidx.window:window:1.5.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\b22d7201279b8b4a48334049fb5ed71d\workspace\transformed\window-1.5.1\AndroidManifest.xml:26:9-28:40
+94            android:name="androidx.window.sidecar"
+94-->[androidx.window:window:1.5.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\b22d7201279b8b4a48334049fb5ed71d\workspace\transformed\window-1.5.1\AndroidManifest.xml:27:13-51
+95            android:required="false" />
+95-->[androidx.window:window:1.5.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\b22d7201279b8b4a48334049fb5ed71d\workspace\transformed\window-1.5.1\AndroidManifest.xml:28:13-37
+96
+97        <provider
+97-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+98            android:name="androidx.startup.InitializationProvider"
+98-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+99            android:authorities="com.google.mediapipe.examples.gesturerecognizer.androidx-startup"
+99-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+100            android:exported="false" >
+100-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+101            <meta-data
+101-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+102-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+103                android:value="androidx.startup" />
+103-->[androidx.emoji2:emoji2:1.3.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\6d29f63e74b2aea3256c3df3fe59e833\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+104            <meta-data
+104-->[androidx.lifecycle:lifecycle-process:2.9.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\954b9fadf7a36c203b488078905dde47\workspace\transformed\lifecycle-process-2.9.0\AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+105-->[androidx.lifecycle:lifecycle-process:2.9.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\954b9fadf7a36c203b488078905dde47\workspace\transformed\lifecycle-process-2.9.0\AndroidManifest.xml:30:17-78
+106                android:value="androidx.startup" />
+106-->[androidx.lifecycle:lifecycle-process:2.9.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\954b9fadf7a36c203b488078905dde47\workspace\transformed\lifecycle-process-2.9.0\AndroidManifest.xml:31:17-49
+107            <meta-data
+107-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+108                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+109                android:value="androidx.startup" />
+109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+110        </provider>
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\7d5ec1bc3480d664ba5f324206563986\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131
+132        <service
+132-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:29:9-35:19
+133            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+133-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:30:13-103
+134            android:exported="false" >
+134-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:31:13-37
+135            <meta-data
+135-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:32:13-34:39
+136                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+136-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:33:17-94
+137                android:value="cct" />
+137-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:34:17-36
+138        </service>
+139        <service
+139-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:26:9-30:19
+140            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+140-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:27:13-117
+141            android:exported="false"
+141-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:28:13-37
+142            android:permission="android.permission.BIND_JOB_SERVICE" >
+142-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:29:13-69
+143        </service>
+144
+145        <receiver
+145-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:32:9-34:40
+146            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+146-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:33:13-132
+147            android:exported="false" />
+147-->[com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:34:13-37
+148    </application>
+149
+150</manifest>

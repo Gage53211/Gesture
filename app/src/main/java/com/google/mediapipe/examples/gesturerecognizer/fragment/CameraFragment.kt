@@ -25,21 +25,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.camera.core.*
+import androidx.camera.core.resolutionselector.AspectRatioStrategy
+import androidx.camera.core.resolutionselector.ResolutionSelector
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
 import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
 import com.google.mediapipe.examples.gesturerecognizer.R
 import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
 import com.google.mediapipe.tasks.vision.core.RunningMode
-import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import androidx.navigation.findNavController
+
 
 
 class CameraFragment : Fragment(),
@@ -76,9 +78,7 @@ class CameraFragment : Fragment(),
         // Make sure that all permissions are still present, since the
         // user could have removed them while the app was in paused state.
         if (!PermissionsFragment.hasPermissions(requireContext())) {
-            Navigation.findNavController(
-                requireActivity(), R.id.fragment_container
-            ).navigate(R.id.action_camera_to_permissions)
+            requireActivity().findNavController(R.id.fragment_container).navigate(R.id.action_camera_to_permissions)
         }
 
         // Start the GestureRecognizerHelper again when users come back
@@ -185,24 +185,32 @@ class CameraFragment : Fragment(),
         val cameraSelector =
             CameraSelector.Builder().requireLensFacing(cameraFacing).build()
 
+        val resolutionSelector = ResolutionSelector.Builder()
+            .setAspectRatioStrategy(
+                AspectRatioStrategy(
+                    AspectRatio.RATIO_4_3,
+                    AspectRatioStrategy.FALLBACK_RULE_AUTO
+                )
+            )
+            .build()
+
         // Preview. Only using the 4:3 ratio because this is the closest to our models
-        preview = Preview.Builder().setTargetAspectRatio(AspectRatio.RATIO_4_3)
+        preview = Preview.Builder().setResolutionSelector(resolutionSelector)
             .setTargetRotation(fragmentCameraBinding.viewFinder.display.rotation)
             .build()
 
         // ImageAnalysis. Using RGBA 8888 to match how our models work
-        imageAnalyzer =
-            ImageAnalysis.Builder().setTargetAspectRatio(AspectRatio.RATIO_4_3)
-                .setTargetRotation(fragmentCameraBinding.viewFinder.display.rotation)
-                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-                .setOutputImageFormat(ImageAnalysis.OUTPUT_IMAGE_FORMAT_RGBA_8888)
-                .build()
-                // The analyzer can then be assigned to the instance
-                .also {
-                    it.setAnalyzer(backgroundExecutor) { image ->
-                        recognizeHand(image)
-                    }
+        imageAnalyzer = ImageAnalysis.Builder()
+            .setResolutionSelector(resolutionSelector) // Replaces setTargetAspectRatio
+            .setTargetRotation(fragmentCameraBinding.viewFinder.display.rotation)
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+            .setOutputImageFormat(ImageAnalysis.OUTPUT_IMAGE_FORMAT_RGBA_8888)
+            .build()
+            .also {
+                it.setAnalyzer(backgroundExecutor) { image ->
+                    recognizeHand(image)
                 }
+            }
 
         // Must unbind the use-cases before rebinding them
         cameraProvider.unbindAll()
@@ -215,7 +223,7 @@ class CameraFragment : Fragment(),
             )
 
             // Attach the viewfinder's surface provider to preview use case
-            preview?.setSurfaceProvider(fragmentCameraBinding.viewFinder.surfaceProvider)
+            preview?.surfaceProvider = fragmentCameraBinding.viewFinder.surfaceProvider
         } catch (exc: Exception) {
             Log.e(TAG, "Use case binding failed", exc)
         }
@@ -240,9 +248,13 @@ class CameraFragment : Fragment(),
     //Should control phone using gestures
     //Delays for different controls volume is 500ms delay while others have a one second delay
     private var lastgestureseen = 0L
-    private var gesturedelay = 1000L
+    private var gesturedelay = 1500L
     private var volumedelay = 500L
-    private var nextandprevdelay = 2000L
+    private var prevdelay = 1500L
+    private var nextdelay = 1900L
+    private var nohandrecoginzeddelay = 2000L
+    private var nextappdelay = 3000L
+
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
     ) {
@@ -255,8 +267,10 @@ class CameraFragment : Fragment(),
                 val currentdelay =when(gestureResult?.categoryName()){
                     "Thumb_Up" -> volumedelay
                     "Thumb_Down" -> volumedelay
-                    "Pointing_Up" -> nextandprevdelay
-                    "Victory" -> nextandprevdelay
+                    "Pointing_Up" -> prevdelay
+                    "Victory" -> nextdelay
+                    "None" -> nohandrecoginzeddelay
+                    "ILoveYou" -> nextappdelay
                     else -> gesturedelay
                 }
                 if (gestureCategories.isNotEmpty() && (timestart - lastgestureseen) > currentdelay) {
@@ -268,7 +282,7 @@ class CameraFragment : Fragment(),
                         "Thumb_Down" -> volumedown()
                         "Pointing_Up" -> prev()
                         "Victory" -> skip()
-                        "I_Love_You" -> next()
+                        "ILoveYou" -> next()
                     }
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
@@ -280,8 +294,7 @@ class CameraFragment : Fragment(),
                 fragmentCameraBinding.overlay.setResults(
                     resultBundle.results.first(),
                     resultBundle.inputImageHeight,
-                    resultBundle.inputImageWidth,
-                    RunningMode.LIVE_STREAM
+                    resultBundle.inputImageWidth
                 )
 
                 // Force a redraw

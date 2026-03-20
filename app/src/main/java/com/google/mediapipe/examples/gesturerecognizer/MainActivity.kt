@@ -18,15 +18,12 @@ package com.google.mediapipe.examples.gesturerecognizer
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
-    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
-        val navController = navHostFragment.navController
+        navHostFragment.navController
 
     }
     private fun isNotificationServiceEnabled(): Boolean {
@@ -47,7 +44,4 @@ class MainActivity : AppCompatActivity() {
         return flat?.contains(pkgName) == true
     }
 
-    fun onBackPressedDispatcher() {
-        finish()
-    }
 }
