@@ -332,7 +332,6 @@ class CameraFragment : Fragment(),
     }
 
 
-
     override fun onError(error: String, errorCode: Int) {
         activity?.runOnUiThread {
             Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()

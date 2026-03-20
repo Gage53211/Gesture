@@ -34,9 +34,10 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 
 
-// TODO: when service is started, hook to any available media session
-//       so the user doesn't have to initially play a song to get the
-//       controls working
+// TODO: re-write so that this service uses GetActiveSessions upon creation so that
+//       the user doesn't have to play music in order to enumerate an active media session.
+
+// TODO: set up the "onBind" function to return information
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
     var volOffset: Int = 1
@@ -90,6 +91,7 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             appPos += 1
             if ((appPos > (tokens.size - 1))  || (appPos < 0) || tokens[appPos] == null) {
+                //appPos -= 1
                 appPos = 0
                 println("RESET APP POS FROM NEXT")
             }
@@ -113,7 +115,6 @@ class MyMediaListener : NotificationListenerService() {
     }
 
     //TODO: Could maybe be cleaned up?
-    //TODO: Use more appropriate "appPos" value when invalid token(s) are present
     //checks for invalid tokens in tokens list
     private fun checkValidity() {
         var invalidTokenPresent = false
@@ -127,7 +128,7 @@ class MyMediaListener : NotificationListenerService() {
             }
             println(tokens.contentToString())
             if (invalidTokenPresent) {
-                appPos = 0 // temp position
+                appPos = 0 // set to last position in list
                 tokens = shiftTokens(tokens)
                 activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
                 return
@@ -136,7 +137,7 @@ class MyMediaListener : NotificationListenerService() {
         }
     }
 
-    //write all non null elements to front of new array
+    //writes all non null elements to front of new array
     private fun shiftTokens (arr: Array<MediaSession.Token?>): Array<MediaSession.Token?> {
         val newArray: Array<MediaSession.Token?> = arrayOfNulls(arr.size)
         var pos = 0
@@ -159,7 +160,7 @@ class MyMediaListener : NotificationListenerService() {
             if (volUp <= maxVolume) {
                 return volUp
             }
-            return maxVolume
+            return currentVol
         }
         if (volDown >= 0) {
             return volDown
@@ -170,6 +171,7 @@ class MyMediaListener : NotificationListenerService() {
     // register all receivers
     override fun onCreate() {
         super.onCreate()
+        appPos = 0
 
         val skipFilter = IntentFilter("ACTION_SKIP")
         val backFilter = IntentFilter("ACTION_PREV")
@@ -179,7 +181,6 @@ class MyMediaListener : NotificationListenerService() {
         val volDownFilter = IntentFilter("ACTION_VOLUME_DOWN")
         val nextAppFiler = IntentFilter("ACTION_NEXT_APP")
         val prevAppFilter = IntentFilter("ACTION_PREV_APP")
-
 
         registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
         registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
@@ -206,14 +207,15 @@ class MyMediaListener : NotificationListenerService() {
                 if (token == tokens[i]) {
                     break
                 }
-                if (tokens[i] == null) {
+                if (tokens[i] == null || i == tokens.size - 1) {
                     tokens[i] = token
+                    appPos = i
                     break
                 }
             }
             println(tokens.contentToString())
-            if (activeController == null && tokens[0] != null) {
-                activeController = tokens[0]?.let { MediaController(applicationContext, it) }
+            if (tokens[appPos] != null) {
+                activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
             }
         }
     }
@@ -230,5 +232,7 @@ class MyMediaListener : NotificationListenerService() {
         unregisterReceiver(volDownReceiver)
         unregisterReceiver(nextApplicationReceiver)
         unregisterReceiver(prevApplicationReceiver)
+
+        println("SERVICE HAS BEEN DESTROYED")
     }
 }
