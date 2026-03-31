@@ -71,7 +71,7 @@ class GestureRecognizerResultsAdapter :
 
     override fun getItemCount(): Int = adapterCategories.size
 
-    inner class ViewHolder(private val binding: ItemGestureRecognizerResultBinding) :
+    class ViewHolder(private val binding: ItemGestureRecognizerResultBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(label: String?, score: Float?) {

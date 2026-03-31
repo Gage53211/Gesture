@@ -1,29 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-49:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josem\\.gradle\\caches\\8.14.3\\transforms\\b4b944666a9b4b78d2521bf42ad79b29\\transformed\\material-1.7.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\d878efcf913655dbea2be6c137ab6530\\workspace\\transformed\\material-1.13.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
-                        "startLines": "2,3,4,10",
+                        "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,177,311,752",
-                        "endLines": "2,3,9,15",
-                        "endColumns": "121,133,10,10",
-                        "endOffsets": "172,306,747,1190"
+                        "startOffsets": "55,169,285,407",
+                        "endColumns": "113,115,121,133",
+                        "endOffsets": "164,280,402,536"
                     },
                     "to": {
-                        "startLines": "11,12,13,19",
+                        "startLines": "11,12,13,14",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "752,874,1008,1449",
-                        "endLines": "11,12,18,24",
-                        "endColumns": "121,133,10,10",
-                        "endOffsets": "869,1003,1444,1887"
+                        "startOffsets": "752,866,982,1104",
+                        "endColumns": "113,115,121,133",
+                        "endOffsets": "861,977,1099,1233"
                     }
                 },
                 {
-                    "source": "C:\\Users\\josem\\.gradle\\caches\\8.14.3\\transforms\\072d6907e70c77ca49f3cb64b4de6cc8\\transformed\\appcompat-1.5.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\562f3a60eae8a7aa567e46f3669740e0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

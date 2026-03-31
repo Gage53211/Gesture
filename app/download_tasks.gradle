@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-task downloadTaskFile(type: Download) {
+tasks.register('downloadTaskFile', Download) {
     src 'https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task'
     dest project.ext.ASSET_DIR + '/gesture_recognizer.task'
     overwrite false
 }
 
-task copyTestModel(type: Copy, dependsOn: downloadTaskFile) {
+tasks.register('copyTestModel', Copy) {
+    dependsOn downloadTaskFile
     from project.ext.ASSET_DIR + '/gesture_recognizer.task'
     into project.ext.TEST_ASSETS_DIR
 }

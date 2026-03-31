@@ -22,7 +22,6 @@
 
 package com.google.mediapipe.examples.gesturerecognizer
 
-import android.os.Build
 import android.app.Notification
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -199,12 +198,8 @@ class MyMediaListener : NotificationListenerService() {
     // we get the token with that notification and use it to create a media controller
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         val extras = sbn.notification.extras
-        val token = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        val token =
             extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            extras.getParcelable(Notification.EXTRA_MEDIA_SESSION)
-        }
         // loop until either null is found or token is found
         // if end of list is reached, replace end with token
         if (token != null) {

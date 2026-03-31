@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/layout_item_gesture_recognizer_result.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/item_gesture_recognizer_result.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/navigation_nav_graph.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/layout_activity_main.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/color_bg_nav_item.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/color/bg_nav_item.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/layout_fragment_camera.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/fragment_camera.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-56:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xhdpi/ic_launcher.png"
+    }
+]
