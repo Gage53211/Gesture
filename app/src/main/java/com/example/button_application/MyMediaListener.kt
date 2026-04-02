@@ -28,12 +28,15 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
+import android.media.Rating
 import android.media.session.MediaController
 import android.media.session.MediaSession
+import android.media.MediaMetadata
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 
-// TODO: set up the "onBind" function to return information
+// TODO: fix like / dislike functionality
+// TODO: send the current position of the song and the maximum position of the song
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
     var volOffset: Int = 1
@@ -47,40 +50,62 @@ class MyMediaListener : NotificationListenerService() {
     private val maxVolume: Int by lazy {
         audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC) ?: 100
     }
+
     private val skipReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.skipToNext()
+            sendMetaDataBroadcast()
         }
     }
+
     private val goBackReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.skipToPrevious()
+            sendMetaDataBroadcast()
         }
     }
+
     private val pauseReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.pause()
+            sendMetaDataBroadcast()
         }
     }
+
     private val playReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.play()
+            sendMetaDataBroadcast()
         }
     }
+
     private val volUpReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC,
                 newVolLevel(volOffset, "VOL_UP") ?: 50, 0)
         }
     }
+
     private val volDownReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC,
                 newVolLevel(volOffset, "VOL_DOWN") ?: 50, 0)
+        }
+    }
+
+    private val likeReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            println("like :)")
+        }
+    }
+
+    private val dislikeReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            println("dislike :(")
         }
     }
 
@@ -95,6 +120,7 @@ class MyMediaListener : NotificationListenerService() {
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
             checkValidity()
+            sendMetaDataBroadcast()
         }
     }
 
@@ -108,6 +134,7 @@ class MyMediaListener : NotificationListenerService() {
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
             checkValidity()
+            sendMetaDataBroadcast()
         }
     }
 
@@ -124,6 +151,8 @@ class MyMediaListener : NotificationListenerService() {
         val volDownFilter = IntentFilter("ACTION_VOLUME_DOWN")
         val nextAppFiler = IntentFilter("ACTION_NEXT_APP")
         val prevAppFilter = IntentFilter("ACTION_PREV_APP")
+        val likeFilter = IntentFilter("ACTION_LIKE")
+        val dislikeFilter = IntentFilter("ACTION_DISLIKE")
 
         registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
         registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
@@ -133,28 +162,33 @@ class MyMediaListener : NotificationListenerService() {
         registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
         registerReceiver(nextApplicationReceiver, nextAppFiler, RECEIVER_EXPORTED)
         registerReceiver(prevApplicationReceiver, prevAppFilter, RECEIVER_EXPORTED)
+        registerReceiver(likeReceiver, likeFilter, RECEIVER_EXPORTED)
+        registerReceiver(dislikeReceiver, dislikeFilter, RECEIVER_EXPORTED)
 
     }
 
     // checks if any currently posted notifications have media session tokens upon startup
     override fun onListenerConnected() {
         val notifications = activeNotifications
+        var position = 0
         for (i in 0 until notifications.size) {
             val extras = notifications[i].notification.extras
             val token = extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
             if (token != null) {
-                tokens[i] = token
+                tokens[position] = token
+                if (position < tokens.size) {
+                    position++
+                }
             }
         }
-        tokens = shiftTokens(tokens)
         println("INITIAL TOKENS-----------------------:")
         println(tokens.contentToString())
         if (tokens[0] != null) {
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+            sendMetaDataBroadcast()
         }
     }
 
-    //TODO: Could maybe be cleaned up?
     //checks for invalid tokens in tokens list
     private fun checkValidity() {
         var invalidTokenPresent = false
@@ -188,6 +222,16 @@ class MyMediaListener : NotificationListenerService() {
             }
         }
         return newArray
+    }
+
+    private fun countActiveTokens (): Int {
+        var count = 0
+        for (t in tokens) {
+            if (t != null) {
+                count++
+            }
+        }
+        return count
     }
 
     // Returns new volume level
@@ -230,7 +274,34 @@ class MyMediaListener : NotificationListenerService() {
             println(tokens.contentToString())
             if (tokens[appPos] != null) {
                 activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+                sendMetaDataBroadcast()
             }
+        }
+    }
+
+    private fun sendMetaDataBroadcast() {
+        val intent = Intent("ACTION_METADATA")
+        if (activeController != null) {
+            val metadata = activeController?.metadata
+            val playBackInf = activeController?.playbackState
+            println(playBackInf)
+
+            // spotify uri workaround
+            val spotifyRegex = "%3A[a-z0-9]*\\?".toRegex()
+            var uri = metadata?.getString(MediaMetadata.METADATA_KEY_ALBUM_ART_URI)
+            if (uri?.contains("spotify") == true) {
+                val hash = spotifyRegex.find(uri)?.value
+                if (hash != null ) {
+                    uri = "https://i.scdn.co/image/" + hash.substring(3, hash.length - 1) // ignore "3A" and "?"
+                }
+            }
+
+            intent.putExtra("TITLE", metadata?.getString(MediaMetadata.METADATA_KEY_TITLE) ?: "No Title Available")
+            intent.putExtra("AUTHOR", metadata?.getString(MediaMetadata.METADATA_KEY_ARTIST) ?: "No Artist")
+            intent.putExtra("ALBUM_NAME", metadata?.getString(MediaMetadata.METADATA_KEY_ALBUM) ?: "No Album Name Available")
+            intent.putExtra("URI", uri ?: "No URI")
+            intent.putExtra("SESSIONS_TRACKED", countActiveTokens())
+            sendBroadcast(intent)
         }
     }
 
@@ -246,6 +317,8 @@ class MyMediaListener : NotificationListenerService() {
         unregisterReceiver(volDownReceiver)
         unregisterReceiver(nextApplicationReceiver)
         unregisterReceiver(prevApplicationReceiver)
+        unregisterReceiver(likeReceiver)
+        unregisterReceiver(dislikeReceiver)
 
         println("SERVICE HAS BEEN DESTROYED")
     }
