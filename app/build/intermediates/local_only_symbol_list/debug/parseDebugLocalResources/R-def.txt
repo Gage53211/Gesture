@@ -30,11 +30,14 @@ id action_camera_to_permissions
 id action_permissions_to_camera
 id camera_container
 id camera_fragment
+id dropdown_menu
 id fragment_container
+id help
 id nav_graph
 id overlay
 id permissions_fragment
 id recyclerview_results
+id settings
 id tvLabel
 id tvScore
 id view_finder
@@ -42,6 +45,7 @@ integer bottom_sheet_control_text_min_ems
 layout activity_main
 layout fragment_camera
 layout item_gesture_recognizer_result
+menu dropmenu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-53:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\d878efcf913655dbea2be6c137ab6530\\workspace\\transformed\\material-1.13.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-pa/values-pa.xml",
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-53:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\1d09adba1c158420197bcd6706bdb1df\\workspace\\transformed\\navigation-ui-2.9.7\\res\\values-pa\\values-pa.xml",

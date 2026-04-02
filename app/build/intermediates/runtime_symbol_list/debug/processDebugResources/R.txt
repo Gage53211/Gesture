@@ -3970,6 +3970,7 @@ int id group_divider 0x7f0900e4
 int id grouping 0x7f0900e5
 int id groups 0x7f0900e6
 int id header_title 0x7f0900e7
+int id help 0x7f09022b
 int id hidden 0x7f0900e8
 int id hide_ime_id 0x7f0900e9
 int id hideable 0x7f0900ea
@@ -4170,6 +4171,7 @@ int id search_voice_btn 0x7f0901ac
 int id select_dialog_listview 0x7f0901ad
 int id selected 0x7f0901ae
 int id selection_type 0x7f0901af
+int id settings 0x7f09022c
 int id sharedValueSet 0x7f0901b0
 int id sharedValueUnset 0x7f0901b1
 int id shortcut 0x7f0901b2
@@ -4496,6 +4498,7 @@ int layout select_dialog_item_material 0x7f0c006c
 int layout select_dialog_multichoice_material 0x7f0c006d
 int layout select_dialog_singlechoice_material 0x7f0c006e
 int layout support_simple_spinner_dropdown_item 0x7f0c006f
+int menu dropmenu 0x7f150000
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001
 int navigation nav_graph 0x7f0f0000

@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,19 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navHostFragment.navController
+
+        val toolbar = findViewById<MaterialToolbar>(R.id.dropdown_menu)
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.settings -> {
+                    true
+                }
+                R.id.help -> {
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
     private fun isNotificationServiceEnabled(): Boolean {

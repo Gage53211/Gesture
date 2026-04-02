@@ -10,6 +10,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.mediapipe.examples.gesturerecognizer.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,11 +21,15 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final MaterialToolbar dropdownMenu;
+
+  @NonNull
   public final FragmentContainerView fragmentContainer;
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull FragmentContainerView fragmentContainer) {
+      @NonNull MaterialToolbar dropdownMenu, @NonNull FragmentContainerView fragmentContainer) {
     this.rootView = rootView;
+    this.dropdownMenu = dropdownMenu;
     this.fragmentContainer = fragmentContainer;
   }
 
@@ -55,13 +60,19 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.dropdown_menu;
+      MaterialToolbar dropdownMenu = ViewBindings.findChildViewById(rootView, id);
+      if (dropdownMenu == null) {
+        break missingId;
+      }
+
       id = R.id.fragment_container;
       FragmentContainerView fragmentContainer = ViewBindings.findChildViewById(rootView, id);
       if (fragmentContainer == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, fragmentContainer);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, dropdownMenu, fragmentContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -284,22 +284,24 @@ class CameraFragment : Fragment(),
                         "Victory" -> skip()
                         "ILoveYou" -> next()
                     }
+                }
+                if (gestureCategories.isEmpty()) {
+                    gestureRecognizerResultAdapter.updateResults(emptyList())
+                }else{
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
                     )
-                } else{
-                    gestureRecognizerResultAdapter.updateResults(emptyList())
                 }
-                // Pass necessary information to OverlayView for drawing on the canvas
-                fragmentCameraBinding.overlay.setResults(
-                    resultBundle.results.first(),
-                    resultBundle.inputImageHeight,
-                    resultBundle.inputImageWidth
-                )
-
-                // Force a redraw
-                fragmentCameraBinding.overlay.invalidate()
             }
+            // Pass necessary information to OverlayView for drawing on the canvas
+            fragmentCameraBinding.overlay.setResults(
+                resultBundle.results.first(),
+                resultBundle.inputImageHeight,
+                resultBundle.inputImageWidth
+            )
+
+            // Force a redraw
+            fragmentCameraBinding.overlay.invalidate()
         }
     }
     private fun volumeup(){

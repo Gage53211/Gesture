@@ -26,18 +26,18 @@
 26
 27    <!-- Enable instant app support -->
 28    <dist:module dist:instant="true" />
-28-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:5-40
-28-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:18-37
+28-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:22:5-40
+28-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:22:18-37
 29
 30    <!-- Declare features -->
 31    <uses-feature android:name="android.hardware.camera" />
-31-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:5-60
-31-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:19-57
+31-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:25:5-60
+31-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:25:19-57
 32
 33    <!-- Declare permissions -->
 34    <uses-permission android:name="android.permission.CAMERA" />
-34-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:5-65
-34-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:22-62
+34-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:28:5-65
+34-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:28:22-62
 35
 36    <permission
 36-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:22:5-24:47
@@ -58,66 +58,66 @@
 43-->[com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1ccc9dfc819ee8552ea0975fc73b6706\workspace\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:26:22-64
 44
 45    <application
-45-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
+45-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
 46        android:allowBackup="true"
-46-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:31:9-35
+46-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:31:9-35
 47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 47-->[androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
 48        android:debuggable="true"
 49        android:extractNativeLibs="false"
 50        android:icon="@mipmap/ic_launcher"
-50-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:32:9-43
+50-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:32:9-43
 51        android:label="@string/app_name"
-51-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:33:9-41
+51-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:33:9-41
 52        android:roundIcon="@mipmap/ic_launcher_round"
-52-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:34:9-54
+52-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:34:9-54
 53        android:supportsRtl="true"
-53-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:35:9-35
+53-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:35:9-35
 54        android:taskAffinity=""
-54-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:36:9-32
+54-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:36:9-32
 55        android:testOnly="true"
 56        android:theme="@style/Theme.GestureRecognizer" >
-56-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:37:9-55
+56-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:37:9-55
 57        <service
-57-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
+57-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
 58            android:name="com.google.mediapipe.examples.gesturerecognizer.MyMediaListener"
-58-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:18-96
+58-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:40:18-96
 59            android:exported="true"
-59-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:42:13-36
+59-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:42:13-36
 60            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-60-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:41:13-87
+60-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:41:13-87
 61            <intent-filter>
-61-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
+61-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
 62                <action android:name="android.service.notification.NotificationListenerService" />
-62-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:17-99
-62-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:25-96
+62-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:44:17-99
+62-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:44:25-96
 63            </intent-filter>
 64        </service>
 65
 66        <activity
-66-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
+66-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
 67            android:name="com.google.mediapipe.examples.gesturerecognizer.MainActivity"
-67-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:48:13-41
+67-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:48:13-41
 68            android:exported="true" >
-68-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:49:13-36
+68-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:49:13-36
 69            <intent-filter>
-69-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
+69-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
 70                <action android:name="android.intent.action.MAIN" />
-70-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:17-69
-70-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:25-66
+70-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:51:17-69
+70-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:51:25-66
 71
 72                <category android:name="android.intent.category.LAUNCHER" />
-72-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:17-77
-72-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:27-74
+72-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:53:17-77
+72-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:53:27-74
 73            </intent-filter>
 74
 75            <!-- Declare notch support -->
 76            <meta-data
-76-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
+76-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
 77                android:name="android.notch_support"
-77-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:58:17-53
+77-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:58:17-53
 78                android:value="true" />
-78-->C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:59:17-37
+78-->C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:59:17-37
 79        </activity>
 80
 81        <service
