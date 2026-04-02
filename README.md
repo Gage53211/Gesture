@@ -10,7 +10,7 @@ They are as follows...
 |![Play](https://github.com/user-attachments/assets/2e6c2b06-c2f8-4cc3-b6e2-864dca02916a)| ![Open_Palm](https://github.com/user-attachments/assets/d377c8a4-d126-4e67-939b-de20c0cec7dd) |
 | *Play music* | *Pause music* |
 
-| **One Finger point (with thumb)**| **Two finger point (no thumb)** |
+| **One Finger point (with thumb)**| **One finger point (no thumb)** |
 |---|---|
 | ![nexttrack](https://github.com/user-attachments/assets/ff60ef60-6982-4afb-8969-9b3d8e18ccbe)|  ![prevtrack](https://github.com/user-attachments/assets/7f8dd320-9cee-4d0e-bdbf-d2837d51d048)|
 | *Next Song* | *Previous Song* |
