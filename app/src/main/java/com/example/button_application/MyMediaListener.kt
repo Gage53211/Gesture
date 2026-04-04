@@ -28,7 +28,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
-import android.media.Rating
 import android.media.session.MediaController
 import android.media.session.MediaSession
 import android.media.MediaMetadata
@@ -37,6 +36,7 @@ import android.service.notification.StatusBarNotification
 
 // TODO: fix like / dislike functionality
 // TODO: send the current position of the song and the maximum position of the song
+// TODO: keep track of notifications, save the largeIcon to temporary storage, send the uri
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
     var volOffset: Int = 1
@@ -97,15 +97,19 @@ class MyMediaListener : NotificationListenerService() {
         }
     }
 
-    private val likeReceiver = object : BroadcastReceiver() {
+    private val likeDislikeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            println("like :)")
-        }
-    }
-
-    private val dislikeReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context?, intent: Intent?) {
-            println("dislike :(")
+            val customControllerActions = activeController?.playbackState?.customActions
+            val likeRegex = "like|add|remove|undo".toRegex(RegexOption.IGNORE_CASE)
+            if (customControllerActions != null && customControllerActions.isNotEmpty()) {
+                for (action in customControllerActions) {
+                    if (action.name?.contains(likeRegex) == true ) {
+                        val actionString: String = action.action
+                        activeController?.transportControls?.sendCustomAction(actionString, null)
+                        break
+                    }
+                }
+            }
         }
     }
 
@@ -113,7 +117,6 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             appPos += 1
             if ((appPos > (tokens.size - 1))  || (appPos < 0) || tokens[appPos] == null) {
-                //appPos -= 1
                 appPos = 0
                 println("RESET APP POS FROM NEXT")
             }
@@ -127,9 +130,13 @@ class MyMediaListener : NotificationListenerService() {
     private val prevApplicationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             appPos -= 1
+            val endOfTokens = countActiveTokens()
             if (appPos < 0 || appPos > (tokens.size - 1)) {
-                appPos = 0
-                println("RESET APP POS FROM PREV")
+                when {
+                    endOfTokens <= 0 -> appPos = 0
+                    else -> appPos = endOfTokens - 1
+                }
+                println("APP POS NOW AT FRONT OF TOKENS")
             }
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
@@ -151,8 +158,7 @@ class MyMediaListener : NotificationListenerService() {
         val volDownFilter = IntentFilter("ACTION_VOLUME_DOWN")
         val nextAppFiler = IntentFilter("ACTION_NEXT_APP")
         val prevAppFilter = IntentFilter("ACTION_PREV_APP")
-        val likeFilter = IntentFilter("ACTION_LIKE")
-        val dislikeFilter = IntentFilter("ACTION_DISLIKE")
+        val likeFilter = IntentFilter("ACTION_LIKE_DISLIKE")
 
         registerReceiver(skipReceiver, skipFilter, RECEIVER_EXPORTED)
         registerReceiver(goBackReceiver, backFilter, RECEIVER_EXPORTED)
@@ -162,8 +168,7 @@ class MyMediaListener : NotificationListenerService() {
         registerReceiver(volDownReceiver, volDownFilter, RECEIVER_EXPORTED)
         registerReceiver(nextApplicationReceiver, nextAppFiler, RECEIVER_EXPORTED)
         registerReceiver(prevApplicationReceiver, prevAppFilter, RECEIVER_EXPORTED)
-        registerReceiver(likeReceiver, likeFilter, RECEIVER_EXPORTED)
-        registerReceiver(dislikeReceiver, dislikeFilter, RECEIVER_EXPORTED)
+        registerReceiver(likeDislikeReceiver, likeFilter, RECEIVER_EXPORTED)
 
     }
 
@@ -317,8 +322,7 @@ class MyMediaListener : NotificationListenerService() {
         unregisterReceiver(volDownReceiver)
         unregisterReceiver(nextApplicationReceiver)
         unregisterReceiver(prevApplicationReceiver)
-        unregisterReceiver(likeReceiver)
-        unregisterReceiver(dislikeReceiver)
+        unregisterReceiver(likeDislikeReceiver)
 
         println("SERVICE HAS BEEN DESTROYED")
     }
