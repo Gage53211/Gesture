@@ -35,10 +35,13 @@ class MainActivity : ComponentActivity() {
     var author by mutableStateOf<String?>("None")
     var album by mutableStateOf<String?>("None")
 
+    var sessions by mutableStateOf<Int?>(0)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        // register metadata receiver
         val metaFilter = IntentFilter("ACTION_METADATA")
         registerReceiver(metaReceiver, metaFilter, RECEIVER_EXPORTED)
 
@@ -59,12 +62,12 @@ class MainActivity : ComponentActivity() {
                         onPlayClick = { sendPlayBroadcast() },
                         onNextAppClick = { sendNextAppBroadcast() },
                         onPrevAppClick = { sendPrevAppBroadcast() },
-                        onLikeClick = { sendLikeBroadcast() },
-                        onDislikeClick = { sendDislikeBroadcast() },
+                        onLikeDislikeClick = { sendLikeDislikeBroadcast() },
                         URI = picture,
                         title = title,
                         author = author,
                         album = album,
+                        sessions = sessions,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -117,13 +120,8 @@ class MainActivity : ComponentActivity() {
         sendBroadcast(intent)
     }
 
-    private fun sendLikeBroadcast() {
-        val intent = Intent("ACTION_LIKE")
-        sendBroadcast(intent)
-    }
-
-    private fun sendDislikeBroadcast() {
-        val intent = Intent("ACTION_DISLIKE")
+    private fun sendLikeDislikeBroadcast() {
+        val intent = Intent("ACTION_LIKE_DISLIKE")
         sendBroadcast(intent)
     }
 
@@ -136,14 +134,12 @@ class MainActivity : ComponentActivity() {
     //metadata receiver
     private val metaReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            println("--------------------------------------------------")
-            println("Sessions Tracked: ${intent?.getIntExtra("SESSIONS_TRACKED", 0)}")
-            println("--------------------------------------------------")
 
             picture = intent?.getStringExtra("URI") ?: "None"
             title = intent?.getStringExtra("TITLE")
             album = intent?.getStringExtra("ALBUM_NAME")
             author = intent?.getStringExtra("AUTHOR")
+            sessions = intent?.getIntExtra("SESSIONS_TRACKED", 0)
 
         }
     }
@@ -158,12 +154,12 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
                        onPlayClick: () -> Unit,
                        onNextAppClick: () -> Unit,
                        onPrevAppClick: () -> Unit,
-                       onLikeClick: () -> Unit,
-                       onDislikeClick: () -> Unit,
+                       onLikeDislikeClick: () -> Unit,
                        URI: String?,
                        title: String?,
                        album: String?,
                        author: String?,
+                       sessions: Int?,
                        modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize(),
@@ -194,11 +190,8 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
         Button(onClick = onPrevAppClick) {
             Text(text = "Prev App")
         }
-        Button(onClick = onLikeClick) {
-            Text(text = "Like")
-        }
-        Button(onClick = onDislikeClick) {
-            Text(text = "Dislike")
+        Button(onClick = onLikeDislikeClick) {
+            Text(text = "Like / Dislike")
         }
         AsyncImage(
             model = (URI ?: "").toUri(),
@@ -223,6 +216,11 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
         if (album != null) {
             Text(
                 text=album
+            )
+        }
+        if (sessions != null) {
+            Text(
+                text="Sessions Tracked $sessions"
             )
         }
     }
