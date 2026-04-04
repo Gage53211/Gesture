@@ -34,7 +34,6 @@ import android.media.MediaMetadata
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 
-// TODO: fix like / dislike functionality
 // TODO: send the current position of the song and the maximum position of the song
 // TODO: keep track of notifications, save the largeIcon to temporary storage, send the uri
 class MyMediaListener : NotificationListenerService() {
