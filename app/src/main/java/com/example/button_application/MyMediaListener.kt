@@ -8,7 +8,12 @@
  *
  * Usage: To send actions, you must specify an Intent() with
  *        the desired action and then Use that intent
- *        with the sendBroadcast() function.
+ *        with the sendBroadcast() function. This service 
+ *        will also emmit metadata whenever a change in
+ *        playback is detected. This metadata can be
+ *        obtained by setting up a broadcast reciever and
+ *        listening for "ACTION_METADATA" and then using 
+ *        the get__datatype__Extra functions to read the data.
  *
  * Current Actions: "ACTION_SKIP"
  *                  "ACTION_PLAY"
@@ -18,6 +23,9 @@
  *                  "ACTION_VOL_DOWN"
  *                  "ACTION_NEXT_APP"
  *                  "ACTION_PREV_APP"
+ *                  "ACTION_LIKE_DISLIKE"
+ *
+ * Sends:           "ACTION_METADATA"
  ***********************************************/
 
 package com.example.button_application
