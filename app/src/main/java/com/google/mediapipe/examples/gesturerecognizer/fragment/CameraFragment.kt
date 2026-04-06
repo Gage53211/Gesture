@@ -69,31 +69,12 @@ class CameraFragment : Fragment(),
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
-    private var lastgestureseen = 0L
-    private var pauseplaydelay = 1500L
-    private var volumedelay = 500L
-    private var prevdelay = 1500L
-    private var nextdelay = 1900L
-    private var nohandrecoginzeddelay = 2000L
-    private var nextappdelay = 3000L
-
-    private fun loadSettings(){
-        val prefs = requireContext().getSharedPreferences("GestureSettings", android.content.Context.MODE_PRIVATE)
-
-        volumedelay = prefs.getInt("vol_delay", 500).toLong()
-        prevdelay = prefs.getInt("prev_delay", 1500).toLong()
-        nextdelay = prefs.getInt("next_delay", 1900).toLong()
-        pauseplaydelay = prefs.getInt("gen_delay", 1500).toLong()
-        nextappdelay = prefs.getInt("next_app_delay", 3000).toLong()
-    }
 
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
     override fun onResume() {
         super.onResume()
-        //Get User inputted delays
-        loadSettings()
         // Make sure that all permissions are still present, since the
         // user could have removed them while the app was in paused state.
         if (!PermissionsFragment.hasPermissions(requireContext())) {
@@ -266,8 +247,13 @@ class CameraFragment : Fragment(),
     // hands are seen in the camera frame, only one will be processed.
     //Should control phone using gestures
     //Delays for different controls volume is 500ms delay while others have a one second delay
-
-
+    private var lastGestureSeen = 0L
+    private var gestureDelay = 1500L
+    private var volumeDelay = 500L
+    private var prevDelay = 1500L
+    private var nextDelay = 1900L
+    private var noHandRecoginzedDelay = 2000L
+    private var appDelay = 3000L
 
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
@@ -278,25 +264,27 @@ class CameraFragment : Fragment(),
                 val gestureCategories = resultBundle.results.first().gestures()
                 val gestureResult = gestureCategories.firstOrNull()?.firstOrNull()
                 val timestart = System.currentTimeMillis()
-                val currentdelay =when(gestureResult?.categoryName()){
-                    "Thumb_Up" -> volumedelay
-                    "Thumb_Down" -> volumedelay
-                    "Pointing_Up" -> prevdelay
-                    "Victory" -> nextdelay
-                    "None" -> nohandrecoginzeddelay
-                    "ILoveYou" -> nextappdelay
-                    else -> pauseplaydelay
+                val currentdelay = when(gestureResult?.categoryName()){
+                    "vol_up" -> volumeDelay
+                    "vol_down" -> volumeDelay
+                    "prev_track" -> prevDelay
+                    "next_track" -> nextDelay
+                    "none" -> noHandRecoginzedDelay
+                    "next_app" -> appDelay
+                    "prev_app" -> appDelay
+                    else -> gestureDelay
                 }
-                if (gestureCategories.isNotEmpty() && (timestart - lastgestureseen) > currentdelay) {
-                    lastgestureseen = timestart
+                if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
+                    lastGestureSeen = timestart
                     when (gestureResult?.categoryName()){
-                        "Closed_Fist" ->pause()
-                        "Open_Palm" -> play()
-                        "Thumb_Up" -> volumeup()
-                        "Thumb_Down" -> volumedown()
-                        "Pointing_Up" -> prev()
-                        "Victory" -> skip()
-                        "ILoveYou" -> next()
+                        "pause" ->pause()
+                        "play" -> play()
+                        "vol_up" -> volumeup()
+                        "vol_down" -> volumedown()
+                        "prev_track" -> prev()
+                        "next_track" -> skip()
+                        "next_app" -> next()
+                        "prev_app" -> next()
                     }
                 }
                 if (gestureCategories.isEmpty()) {
