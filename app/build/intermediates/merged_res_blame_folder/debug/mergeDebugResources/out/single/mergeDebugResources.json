@@ -16,6 +16,10 @@
         "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-55:/layout_activity_settings.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-57:/layout/activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-55:\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\mipmap-xhdpi\\ic_launcher.png"
     },
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-55:\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-55:\\menu_dropmenu.xml.flat",
+        "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\menu\\dropmenu.xml"
     },
     {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-55:\\mipmap-mdpi_ic_launcher.png.flat",
@@ -56,11 +64,11 @@
         "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-55:/menu_dropmenu.xml.flat",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-57:/menu/dropmenu.xml"
-    },
-    {
         "merged": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-55:\\layout_item_gesture_recognizer_result.xml.flat",
         "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\layout\\item_gesture_recognizer_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-55:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\josem\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-57:\\layout\\activity_settings.xml"
     }
 ]

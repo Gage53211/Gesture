@@ -4151,6 +4151,11 @@ int id rtl 0x7f090198
 int id save_non_transition_alpha 0x7f090199
 int id save_overlay_view 0x7f09019a
 int id sawtooth 0x7f09019b
+int id sbNextAppDelay 0x7f09022d
+int id sbNextSongDelay 0x7f09022e
+int id sbPausePlayDelay 0x7f09022f
+int id sbPrevDelay 0x7f090230
+int id sbVolDelay 0x7f090231
 int id scale 0x7f09019c
 int id screen 0x7f09019d
 int id scroll 0x7f09019e
@@ -4268,7 +4273,14 @@ int id transition_scene_layoutid_cache 0x7f09020c
 int id transition_transform 0x7f09020d
 int id triangle 0x7f09020e
 int id tvLabel 0x7f09020f
+int id tvNavValue 0x7f090232
+int id tvNextSongValue 0x7f090233
+int id tvPausePlayValue 0x7f090234
+int id tvPrevSongValue 0x7f090235
 int id tvScore 0x7f090210
+int id tvTitle 0x7f090236
+int id tvVolLabel 0x7f090237
+int id tvVolValue 0x7f090238
 int id unchecked 0x7f090211
 int id uniform 0x7f090212
 int id unlabeled 0x7f090213
@@ -4415,6 +4427,7 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_main 0x7f0c001c
+int layout activity_settings 0x7f0c0070
 int layout custom_dialog 0x7f0c001d
 int layout design_bottom_navigation_item 0x7f0c001e
 int layout design_bottom_sheet_dialog 0x7f0c001f

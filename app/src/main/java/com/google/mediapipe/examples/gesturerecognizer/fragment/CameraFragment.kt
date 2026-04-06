@@ -69,12 +69,31 @@ class CameraFragment : Fragment(),
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
+    private var lastgestureseen = 0L
+    private var pauseplaydelay = 1500L
+    private var volumedelay = 500L
+    private var prevdelay = 1500L
+    private var nextdelay = 1900L
+    private var nohandrecoginzeddelay = 2000L
+    private var nextappdelay = 3000L
+
+    private fun loadSettings(){
+        val prefs = requireContext().getSharedPreferences("GestureSettings", android.content.Context.MODE_PRIVATE)
+
+        volumedelay = prefs.getInt("vol_delay", 500).toLong()
+        prevdelay = prefs.getInt("prev_delay", 1500).toLong()
+        nextdelay = prefs.getInt("next_delay", 1900).toLong()
+        pauseplaydelay = prefs.getInt("gen_delay", 1500).toLong()
+        nextappdelay = prefs.getInt("next_app_delay", 3000).toLong()
+    }
 
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
     override fun onResume() {
         super.onResume()
+        //Get User inputted delays
+        loadSettings()
         // Make sure that all permissions are still present, since the
         // user could have removed them while the app was in paused state.
         if (!PermissionsFragment.hasPermissions(requireContext())) {
@@ -247,13 +266,8 @@ class CameraFragment : Fragment(),
     // hands are seen in the camera frame, only one will be processed.
     //Should control phone using gestures
     //Delays for different controls volume is 500ms delay while others have a one second delay
-    private var lastgestureseen = 0L
-    private var gesturedelay = 1500L
-    private var volumedelay = 500L
-    private var prevdelay = 1500L
-    private var nextdelay = 1900L
-    private var nohandrecoginzeddelay = 2000L
-    private var nextappdelay = 3000L
+
+
 
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
@@ -271,7 +285,7 @@ class CameraFragment : Fragment(),
                     "Victory" -> nextdelay
                     "None" -> nohandrecoginzeddelay
                     "ILoveYou" -> nextappdelay
-                    else -> gesturedelay
+                    else -> pauseplaydelay
                 }
                 if (gestureCategories.isNotEmpty() && (timestart - lastgestureseen) > currentdelay) {
                     lastgestureseen = timestart

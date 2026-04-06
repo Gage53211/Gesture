@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
+import androidx.core.view.WindowCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         if (!isNotificationServiceEnabled()) {
             startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
         }
+        WindowCompat.setDecorFitsSystemWindows(window, true)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.settings -> {
+                    navigatetoSettings()
                     true
                 }
                 R.id.help -> {
@@ -51,6 +54,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+    private fun navigatetoSettings(){
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
     private fun isNotificationServiceEnabled(): Boolean {
         val pkgName = packageName
