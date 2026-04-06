@@ -70,11 +70,29 @@ class CameraFragment : Fragment(),
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
 
+    private var lastGestureSeen = 0L
+    private var pauseplayDelay = 1500L
+    private var volumeDelay = 500L
+    private var prevDelay = 1500L
+    private var nextDelay = 1900L
+    private var noHandRecoginzedDelay = 2000L
+    private var nextappDelay = 3000L
+
+    private fun loadSettings(){
+        val prefs = requireContext().getSharedPreferences("GestureSettings", android.content.Context.MODE_PRIVATE)
+        pauseplayDelay = prefs.getInt("gen_delay", 1500).toLong()
+        volumeDelay = prefs.getInt("vol_delay", 500).toLong()
+        nextDelay = prefs.getInt("next_delay", 1900).toLong()
+        prevDelay = prefs.getInt("prev_delay", 1500).toLong()
+        nextappDelay = prefs.getInt("next_app_delay", 3000).toLong()
+    }
+
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
     override fun onResume() {
         super.onResume()
+        loadSettings()
         // Make sure that all permissions are still present, since the
         // user could have removed them while the app was in paused state.
         if (!PermissionsFragment.hasPermissions(requireContext())) {
@@ -247,13 +265,7 @@ class CameraFragment : Fragment(),
     // hands are seen in the camera frame, only one will be processed.
     //Should control phone using gestures
     //Delays for different controls volume is 500ms delay while others have a one second delay
-    private var lastGestureSeen = 0L
-    private var gestureDelay = 1500L
-    private var volumeDelay = 500L
-    private var prevDelay = 1500L
-    private var nextDelay = 1900L
-    private var noHandRecoginzedDelay = 2000L
-    private var appDelay = 3000L
+
 
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
@@ -270,9 +282,9 @@ class CameraFragment : Fragment(),
                     "prev_track" -> prevDelay
                     "next_track" -> nextDelay
                     "none" -> noHandRecoginzedDelay
-                    "next_app" -> appDelay
-                    "prev_app" -> appDelay
-                    else -> gestureDelay
+                    "next_app" -> nextappDelay
+                    "prev_app" -> nextappDelay
+                    else -> pauseplayDelay
                 }
                 if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
                     lastGestureSeen = timestart
