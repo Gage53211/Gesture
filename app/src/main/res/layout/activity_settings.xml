@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA"
+    android:background="@android:color/black"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -12,15 +12,24 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:id="@+id/tvTitle"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Gesture Delays"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#333333"
-            android:layout_marginBottom="16dp"/>
+            android:layout_height="81dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp" >
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/gesture_delays"
+                android:textColor="@color/SettingsTextcolor"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Volume -->
         <com.google.android.material.card.MaterialCardView
@@ -28,7 +37,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,26 +53,30 @@
                         android:id="@+id/tvVolLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Volume Control"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textStyle="bold" />
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tvVolValue"
+                        android:text="@string/volume_control"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/SettingsTextcolor" />
 
                     <TextView
                         android:id="@+id/tvVolValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="500 ms"
-                        android:textColor="?attr/colorPrimary"
+                        android:text="@string/_500_ms"
+                        android:textSize="11sp"
+                        android:textColor="@color/SettingsTextcolor"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cooldown between volume steps"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    android:textColor="#757575"/>
+                    android:text="@string/cooldown_between_volume_steps"
+                    android:textColor="#757575"
+                    android:textSize="11sp"/>
 
                 <SeekBar
                     android:id="@+id/sbVolDelay"
@@ -70,7 +84,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:max="5000"
-                    android:progress="500" />
+                    android:progress="500"
+                    android:progressTint="@color/SettingsTextcolor"
+                    android:thumbTint="@color/SettingsTextcolor" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -80,7 +96,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,26 +109,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvNavLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="App Navigation"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textStyle="bold" />
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tvNavValue"
+                        android:text="@string/app_navigation"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/SettingsTextcolor" />
                     <TextView
                         android:id="@+id/tvNavValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="3000 ms"
-                        android:textColor="?attr/colorPrimary"
+                        android:text="@string/_3000_ms"
+                        android:textSize="11sp"
+                        android:textColor="@color/SettingsTextcolor"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cooldown between app navigation steps"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    android:textColor="#757575"/>
+                    android:text="@string/cooldown_between_app_navigation_steps"
+                    android:textColor="#757575"
+                    android:textSize="11sp"/>
 
                 <SeekBar
                     android:id="@+id/sbNextAppDelay"
@@ -119,7 +141,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:max="5000"
-                    android:progress="3000" />
+                    android:progress="3000"
+                    android:progressTint="@color/SettingsTextcolor"
+                    android:thumbTint="@color/SettingsTextcolor" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -129,7 +153,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -141,26 +166,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvPausePlayLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pause/Play Control"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textStyle="bold" />
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tvPausePlayValue"
+                        android:text="@string/pause_play_control"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/SettingsTextcolor" />
                     <TextView
                         android:id="@+id/tvPausePlayValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="1500 ms"
-                        android:textColor="?attr/colorPrimary"
+                        android:text="@string/_1500_ms"
+                        android:textSize="11sp"
+                        android:textColor="@color/SettingsTextcolor"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cooldown between each pause/play"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    android:textColor="#757575"/>
+                    android:text="@string/cooldown_between_each_pause_play"
+                    android:textColor="#757575"
+                    android:textSize="11sp"/>
 
                 <SeekBar
                     android:id="@+id/sbPausePlayDelay"
@@ -168,7 +198,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:max="5000"
-                    android:progress="1500" />
+                    android:progress="1500"
+                    android:progressTint="@color/SettingsTextcolor"
+                    android:thumbTint="@color/SettingsTextcolor" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -179,7 +211,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -191,26 +224,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvNextSongLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Next Song Cooldown"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textStyle="bold" />
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tvNextSongValue"
+                        android:text="@string/next_song_cooldown"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/SettingsTextcolor" />
                     <TextView
                         android:id="@+id/tvNextSongValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="1900 ms"
-                        android:textColor="?attr/colorPrimary"
+                        android:text="@string/_1900_ms"
+                        android:textSize="11sp"
+                        android:textColor="@color/SettingsTextcolor"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cooldown between skipping songs"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    android:textColor="#757575"/>
+                    android:text="@string/cooldown_between_skipping_songs"
+                    android:textColor="#757575"
+                    android:textSize="11sp"/>
 
                 <SeekBar
                     android:id="@+id/sbNextSongDelay"
@@ -218,7 +256,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:max="5000"
-                    android:progress="1900" />
+                    android:progress="1900"
+                    android:progressTint="@color/SettingsTextcolor"
+                    android:thumbTint="@color/SettingsTextcolor" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -228,7 +268,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -240,26 +281,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/tvPrevSongLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Previous Song Cooldown"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textStyle="bold" />
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tvPrevSongValue"
+                        android:text="@string/previous_song_cooldown"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/SettingsTextcolor" />
                     <TextView
                         android:id="@+id/tvPrevSongValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="1500 ms"
-                        android:textColor="?attr/colorPrimary"
+                        android:text="@string/_1500_ms"
+                        android:textSize="11sp"
+                        android:textColor="@color/SettingsTextcolor"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cooldown for going to previous song"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    android:textColor="#757575"/>
+                    android:text="@string/cooldown_for_going_to_previous_song"
+                    android:textColor="#757575"
+                    android:textSize="11sp"/>
 
                 <SeekBar
                     android:id="@+id/sbPrevDelay"
@@ -267,7 +313,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:max="5000"
-                    android:progress="1500" />
+                    android:progress="1500"
+                    android:progressTint="@color/SettingsTextcolor"
+                    android:thumbTint="@color/SettingsTextcolor" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

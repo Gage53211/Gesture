@@ -15,7 +15,7 @@
     ~ limitations under the License.
 -->
 <resources>
-    <string name="app_name">music conductor</string>
+    <string name="app_name">Music Conductor</string>
 
     <string name="media_pipe">MediaPipe</string>
 
@@ -45,6 +45,21 @@
     <string name="label_hand_presence_confidence_threshold">Presence
         Threshold</string>
     <string name="label_delegate">Delegate</string>
+    <string name="cooldown_between_volume_steps">Cooldown between volume steps</string>
+    <string name="_500_ms">500 ms</string>
+    <string name="volume_control">Volume Control</string>
+    <string name="gesture_delays">Gesture Delays</string>
+    <string name="app_navigation">App Navigation</string>
+    <string name="_3000_ms">3000 ms</string>
+    <string name="cooldown_between_app_navigation_steps">Cooldown between app navigation steps</string>
+    <string name="pause_play_control">Pause/Play Control</string>
+    <string name="_1500_ms">1500 ms</string>
+    <string name="cooldown_between_each_pause_play">Cooldown between each pause/play</string>
+    <string name="next_song_cooldown">Next Song Cooldown</string>
+    <string name="cooldown_between_skipping_songs">Cooldown between skipping songs</string>
+    <string name="previous_song_cooldown">Previous Song Cooldown</string>
+    <string name="cooldown_for_going_to_previous_song">Cooldown for going to previous song</string>
+    <string name="_1900_ms">1900 ms</string>
 
     <string-array name="delegate_spinner_titles">
         <item>CPU</item>
