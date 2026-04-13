@@ -9,11 +9,11 @@
  * Usage: To send actions, you must specify an Intent() with
  *        the desired action and then Use that intent
  *        with the sendBroadcast() function. This service 
- *        will also emmit metadata whenever a change in
- *        playback is detected. This metadata can be
- *        obtained by setting up a broadcast reciever and
- *        listening for "ACTION_METADATA" and then using 
- *        the get__datatype__Extra functions to read the data.
+ *        will also emmit metadata and playback data whenever
+ *        either change. This data can be obtained by setting up
+ *        two broadcast receivers listening for "ACTION_METADATA"
+ *        and "ACTION_PLAYBACK_DATA" and then using the
+ *        get__datatype__Extra functions of the Intent class to read the data.
  *
  * Current Actions: "ACTION_SKIP"
  *                  "ACTION_PLAY"
@@ -26,10 +26,10 @@
  *                  "ACTION_LIKE_DISLIKE"
  *
  * Sends:           "ACTION_METADATA"
+ *                  "ACTION_PLAYBACK_DATA"
  ***********************************************/
 
 package com.example.button_application
-
 import android.app.Notification
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -39,11 +39,11 @@ import android.media.AudioManager
 import android.media.session.MediaController
 import android.media.session.MediaSession
 import android.media.MediaMetadata
+import android.media.session.PlaybackState
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
+import androidx.core.graphics.drawable.toBitmap
 
-// TODO: send the current position of the song and the maximum position of the song
-// TODO: keep track of notifications, save the largeIcon to temporary storage, send the uri
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
     var volOffset: Int = 1
@@ -62,7 +62,6 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.skipToNext()
-            sendMetaDataBroadcast()
         }
     }
 
@@ -70,7 +69,6 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.skipToPrevious()
-            sendMetaDataBroadcast()
         }
     }
 
@@ -78,7 +76,6 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.pause()
-            sendMetaDataBroadcast()
         }
     }
 
@@ -86,7 +83,6 @@ class MyMediaListener : NotificationListenerService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             checkValidity()
             activeController?.transportControls?.play()
-            sendMetaDataBroadcast()
         }
     }
 
@@ -120,6 +116,15 @@ class MyMediaListener : NotificationListenerService() {
         }
     }
 
+    private val mediaControllerCB = object : MediaController.Callback() {
+        override fun onPlaybackStateChanged(state: PlaybackState?) {
+            sendPlayBackDataBroadcast()
+        }
+        override fun onMetadataChanged(metadata: MediaMetadata?) {
+            sendMetaDataBroadcast()
+        }
+    }
+
     private val nextApplicationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             appPos += 1
@@ -128,9 +133,12 @@ class MyMediaListener : NotificationListenerService() {
                 println("RESET APP POS FROM NEXT")
             }
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
+            activeController?.unregisterCallback(mediaControllerCB)
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+            activeController?.registerCallback(mediaControllerCB)
             checkValidity()
             sendMetaDataBroadcast()
+            sendPlayBackDataBroadcast()
         }
     }
 
@@ -146,9 +154,12 @@ class MyMediaListener : NotificationListenerService() {
                 println("APP POS NOW AT FRONT OF TOKENS")
             }
             println("App Position: " + appPos + " Media Session: " + tokens[appPos])
+            activeController?.unregisterCallback(mediaControllerCB)
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+            activeController?.registerCallback(mediaControllerCB)
             checkValidity()
             sendMetaDataBroadcast()
+            sendPlayBackDataBroadcast()
         }
     }
 
@@ -197,7 +208,9 @@ class MyMediaListener : NotificationListenerService() {
         println(tokens.contentToString())
         if (tokens[0] != null) {
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+            activeController?.registerCallback(mediaControllerCB)
             sendMetaDataBroadcast()
+            sendPlayBackDataBroadcast()
         }
     }
 
@@ -212,14 +225,21 @@ class MyMediaListener : NotificationListenerService() {
                     invalidTokenPresent = true
                 }
             }
-            println(tokens.contentToString())
             if (invalidTokenPresent) {
                 appPos = 0 // set to last position in list
                 tokens = shiftTokens(tokens)
+                activeController?.unregisterCallback(mediaControllerCB)
                 activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+                activeController?.registerCallback(mediaControllerCB)
+                sendMetaDataBroadcast()
+                sendPlayBackDataBroadcast()
                 return
             }
+            activeController?.unregisterCallback(mediaControllerCB)
             activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+            activeController?.registerCallback(mediaControllerCB)
+            sendMetaDataBroadcast()
+            sendPlayBackDataBroadcast()
         }
     }
 
@@ -246,6 +266,24 @@ class MyMediaListener : NotificationListenerService() {
         return count
     }
 
+    private fun getActiveMCNotification(): Notification? {
+        val notifications = activeNotifications
+        if (activeController != null) {
+            val activeToken = activeController?.sessionToken
+            for (notification in notifications) {
+                val extras = notification.notification.extras
+                val token = extras.getParcelable(
+                    Notification.EXTRA_MEDIA_SESSION,
+                    MediaSession.Token::class.java
+                )
+                if (token != null && token == activeToken) {
+                    return notification.notification
+                }
+            }
+        }
+        return null
+    }
+
     // Returns new volume level
     private fun newVolLevel (offset: Int?, direction: String): Int? {
         val currentVol: Int? = audioManager?.getStreamVolume(AudioManager.STREAM_MUSIC)
@@ -264,12 +302,10 @@ class MyMediaListener : NotificationListenerService() {
         return currentVol
     }
 
-    // upon receiving a notification that music is playing from some application
-    // we get the token with that notification and use it to create a media controller
+
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         val extras = sbn.notification.extras
         val token = extras.getParcelable(Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
-
         // loop until either null is found or token is found
         // if end of list is reached, replace end with token
         if (token != null) {
@@ -285,18 +321,22 @@ class MyMediaListener : NotificationListenerService() {
             }
             println(tokens.contentToString())
             if (tokens[appPos] != null) {
+                activeController?.unregisterCallback(mediaControllerCB)
                 activeController = tokens[appPos]?.let { MediaController(applicationContext, it) }
+                activeController?.registerCallback(mediaControllerCB)
                 sendMetaDataBroadcast()
+                sendPlayBackDataBroadcast()
             }
         }
     }
-
     private fun sendMetaDataBroadcast() {
         val intent = Intent("ACTION_METADATA")
         if (activeController != null) {
             val metadata = activeController?.metadata
-            val playBackInf = activeController?.playbackState
-            println(playBackInf)
+            val activeNotif = getActiveMCNotification()
+            val bitmapImg = activeNotif?.getLargeIcon()
+            val drawable = bitmapImg?.loadDrawable(this)
+            val bitmap = drawable?.toBitmap()
 
             // spotify uri workaround
             val spotifyRegex = "%3A[a-z0-9]*\\?".toRegex()
@@ -312,10 +352,26 @@ class MyMediaListener : NotificationListenerService() {
             intent.putExtra("AUTHOR", metadata?.getString(MediaMetadata.METADATA_KEY_ARTIST) ?: "No Artist")
             intent.putExtra("ALBUM_NAME", metadata?.getString(MediaMetadata.METADATA_KEY_ALBUM) ?: "No Album Name Available")
             intent.putExtra("URI", uri ?: "No URI")
+            intent.putExtra("BITMAP", bitmap)
             intent.putExtra("SESSIONS_TRACKED", countActiveTokens())
             sendBroadcast(intent)
         }
     }
+
+    private fun sendPlayBackDataBroadcast() {
+        val intent = Intent("ACTION_PLAYBACK_DATA")
+        if (activeController != null) {
+            val metadata = activeController?.metadata
+            val playBackInfo = activeController?.playbackState
+
+            intent.putExtra("DURATION", metadata?.getLong(MediaMetadata.METADATA_KEY_DURATION) ?: -1)
+            intent.putExtra("CURRENT_POSITION", playBackInfo?.position ?: -1)
+            intent.putExtra("SESSIONS_TRACKED", countActiveTokens())
+            intent.putExtra("STATE", playBackInfo?.state ?: "State Not Available")
+            sendBroadcast(intent)
+        }
+    }
+
 
     //free resources
     override fun onDestroy() {
