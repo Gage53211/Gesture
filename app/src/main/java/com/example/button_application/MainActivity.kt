@@ -4,11 +4,14 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Bitmap
+import android.media.session.MediaSession
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,15 +30,21 @@ import com.example.button_application.ui.theme.Button_applicationTheme
 import androidx.core.net.toUri
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.asImageBitmap
 
 class MainActivity : ComponentActivity() {
     var picture by mutableStateOf<String?>("None")
     var title by mutableStateOf<String?>("None")
     var author by mutableStateOf<String?>("None")
     var album by mutableStateOf<String?>("None")
-
+    var state by mutableStateOf<Int?>(-1)
     var sessions by mutableStateOf<Int?>(0)
+    var duration by mutableStateOf<Long?>(0)
+    var currentPos by mutableStateOf<Long?>(0)
+
+    var bitmap by mutableStateOf<Bitmap?>(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +52,9 @@ class MainActivity : ComponentActivity() {
 
         // register metadata receiver
         val metaFilter = IntentFilter("ACTION_METADATA")
+        val playBackFilter = IntentFilter("ACTION_PLAYBACK_DATA")
         registerReceiver(metaReceiver, metaFilter, RECEIVER_EXPORTED)
+        registerReceiver(playBackReceiver, playBackFilter, RECEIVER_EXPORTED)
 
         // Prompt user for permission if not already granted
         if (!isNotificationServiceEnabled()) {
@@ -68,6 +79,10 @@ class MainActivity : ComponentActivity() {
                         author = author,
                         album = album,
                         sessions = sessions,
+                        state = state,
+                        duration = duration,
+                        currentPos = currentPos,
+                        bitmap = bitmap,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -77,6 +92,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onDestroy() {
         unregisterReceiver(metaReceiver)
+        unregisterReceiver(playBackReceiver)
         super.onDestroy()
     }
 
@@ -135,11 +151,23 @@ class MainActivity : ComponentActivity() {
     private val metaReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
 
+            bitmap = intent?.getParcelableExtra("BITMAP", Bitmap::class.java)
             picture = intent?.getStringExtra("URI") ?: "None"
             title = intent?.getStringExtra("TITLE")
             album = intent?.getStringExtra("ALBUM_NAME")
             author = intent?.getStringExtra("AUTHOR")
             sessions = intent?.getIntExtra("SESSIONS_TRACKED", 0)
+
+        }
+    }
+
+    private val playBackReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+
+            sessions = intent?.getIntExtra("SESSIONS_TRACKED", 0)
+            state = intent?.getIntExtra("STATE", 0)
+            currentPos = intent?.getLongExtra("CURRENT_POSITION", -1)
+            duration = intent?.getLongExtra("DURATION", -1)
 
         }
     }
@@ -160,6 +188,10 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
                        album: String?,
                        author: String?,
                        sessions: Int?,
+                       state: Int?,
+                       duration: Long?,
+                       currentPos: Long?,
+                       bitmap: Bitmap?,
                        modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize(),
@@ -193,27 +225,43 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
         Button(onClick = onLikeDislikeClick) {
             Text(text = "Like / Dislike")
         }
-        AsyncImage(
-            model = (URI ?: "").toUri(),
-            contentDescription = "Album Art",
-            modifier = Modifier.size(200.dp),
-            onState = { state ->
-                if (state is AsyncImagePainter.State.Error) {
-                    println("Error: ${state.result.throwable}")
+
+        if (URI != "No URI")
+        {
+            //println("URI Used")
+            AsyncImage(
+                model = (URI ?: "").toUri(),
+                contentDescription = "Album Art",
+                modifier = Modifier.size(200.dp),
+                onState = { state ->
+                    if (state is AsyncImagePainter.State.Error) {
+                        println("Error: ${state.result.throwable}")
+                    }
                 }
+            )
+        }
+        else {
+            //println("Bitmap Used")
+            if (bitmap != null) {
+                Image(
+                    bitmap = bitmap.asImageBitmap(),
+                    contentDescription = "Album Art",
+                    modifier = Modifier.size(200.dp) // Optional styling
+                )
             }
-        )
-        if (title != null) {
+        }
+
+        if (title != null && title != "") {
             Text(
                 text=title
             )
         }
-        if (author != null) {
+        if (author != null && author != "") {
             Text(
                 text=author
             )
         }
-        if (album != null) {
+        if (album != null && album != "") {
             Text(
                 text=album
             )
@@ -222,6 +270,24 @@ fun MediaControlScreen(onSkipClick: () -> Unit,
             Text(
                 text="Sessions Tracked $sessions"
             )
+        }
+        if (duration != null) {
+            Text(
+                text="Max Duration $duration"
+            )
+        }
+        if (currentPos != null) {
+            Text(
+                text="Current Position $currentPos"
+            )
+        }
+        if (state != null) {
+            when(state) {
+                0 -> Text(text="None")
+                1 -> Text(text="Stopped")
+                2 -> Text(text="Paused")
+                3 -> Text(text="Playing")
+            }
         }
     }
 }
