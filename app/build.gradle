@@ -72,6 +72,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'androidx.fragment:fragment-ktx:1.8.9'
+    implementation 'androidx.activity:activity:1.13.0'
 
     // Navigation library
     def nav_version = "2.9.7"

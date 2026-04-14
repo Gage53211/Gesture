@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-53:/values-kk/values-kk.xml",
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-kk/values-kk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\fe4c9b92d3a180392ef7be6f17e6db4c\\workspace\\transformed\\core-1.18.0\\res\\values-kk\\values-kk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,155,257,359,462,566,663,774",
-                        "endColumns": "99,101,101,102,103,96,110,100",
-                        "endOffsets": "150,252,354,457,561,658,769,870"
-                    },
-                    "to": {
-                        "startLines": "37,38,39,40,41,42,43,123",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3335,3435,3537,3639,3742,3846,3943,10403",
-                        "endColumns": "99,101,101,102,103,96,110,100",
-                        "endOffsets": "3430,3532,3634,3737,3841,3938,4049,10499"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\1d09adba1c158420197bcd6706bdb1df\\workspace\\transformed\\navigation-ui-2.9.7\\res\\values-kk\\values-kk.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,117",
-                        "endOffsets": "163,281"
-                    },
-                    "to": {
-                        "startLines": "116,117",
-                        "startColumns": "4,4",
-                        "startOffsets": "9767,9880",
-                        "endColumns": "112,117",
-                        "endOffsets": "9875,9993"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\562f3a60eae8a7aa567e46f3669740e0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\motoe\\.gradle\\caches\\9.1.0\\transforms\\562f3a60eae8a7aa567e46f3669740e0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\d878efcf913655dbea2be6c137ab6530\\workspace\\transformed\\material-1.13.0\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\motoe\\.gradle\\caches\\9.1.0\\transforms\\fe4c9b92d3a180392ef7be6f17e6db4c\\workspace\\transformed\\core-1.18.0\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,155,257,359,462,566,663,774",
+                        "endColumns": "99,101,101,102,103,96,110,100",
+                        "endOffsets": "150,252,354,457,561,658,769,870"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,123",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3335,3435,3537,3639,3742,3846,3943,10403",
+                        "endColumns": "99,101,101,102,103,96,110,100",
+                        "endOffsets": "3430,3532,3634,3737,3841,3938,4049,10499"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\motoe\\.gradle\\caches\\9.1.0\\transforms\\d878efcf913655dbea2be6c137ab6530\\workspace\\transformed\\material-1.13.0\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,118,120,121,122",
                         "endColumns": "12,77,75,78,87,91,111,81,59,63,94,69,62,83,106,64,66,60,66,61,68,70,54,53,113,58,60,53,74,125,87,85,100,89,89,141,71,72,136,88,80,56,55,65,70,76,70,79,71,75,80,69,99,86,71,90,92,73,74,91,51,81,65,83,85,61,63,62,68,103,89,93,85,93,96,60,59,83,83,75,78",
                         "endOffsets": "318,3087,3163,3242,3330,4141,4253,4335,4395,4459,4554,4624,4687,4771,4878,4943,5010,5071,5138,5200,5269,5340,5395,5449,5563,5622,5683,5737,5812,5938,6026,6112,6213,6303,6393,6535,6607,6680,6817,6906,6987,7044,7100,7166,7237,7314,7385,7465,7537,7613,7694,7764,7864,7951,8023,8114,8207,8281,8356,8448,8500,8582,8648,8732,8818,8880,8944,9007,9076,9180,9270,9364,9450,9544,9641,9702,9762,10077,10243,10319,10398"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\motoe\\.gradle\\caches\\9.1.0\\transforms\\1d09adba1c158420197bcd6706bdb1df\\workspace\\transformed\\navigation-ui-2.9.7\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endColumns": "112,117",
+                        "endOffsets": "163,281"
+                    },
+                    "to": {
+                        "startLines": "116,117",
+                        "startColumns": "4,4",
+                        "startOffsets": "9767,9880",
+                        "endColumns": "112,117",
+                        "endOffsets": "9875,9993"
                     }
                 }
             ]

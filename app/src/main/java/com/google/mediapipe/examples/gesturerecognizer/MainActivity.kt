@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.help -> {
+                    navigatetoTutorial()
                     true
                 }
                 else -> false
@@ -57,6 +58,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun navigatetoSettings(){
         val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+    }
+    //This is the function called to change the intent to the tutorial activity
+    private fun navigatetoTutorial(){
+        val intent = Intent(this, TutorialActivity::class.java)
         startActivity(intent)
     }
     private fun isNotificationServiceEnabled(): Boolean {
