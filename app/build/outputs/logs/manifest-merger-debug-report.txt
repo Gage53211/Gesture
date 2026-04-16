@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:1-63:12
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:17:1-66:12
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:17:1-66:12
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:17:1-66:12
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:17:1-66:12
 MERGED from [androidx.databinding:viewbinding:9.0.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\d6e2703130f6e3507ddf88b37b1544fe\workspace\transformed\viewbinding-9.0.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.7] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe74c361ce6cfc81e468cb7b0f269482\workspace\transformed\navigation-runtime-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.7] C:\Users\josem\.gradle\caches\9.1.0\transforms\73e74d36619cf85bb48e73301b516624\workspace\transformed\navigation-common-release\AndroidManifest.xml:17:1-22:12
@@ -75,32 +75,32 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\1c5bd167333907da4c3a5d975afdb68e\workspace\transformed\transport-api-3.0.0\AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\70f65e2742b7ab707e8d94b72cf73a4a\workspace\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
 	package
-		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:19:5-51
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:19:5-51
 	xmlns:dist
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:18:5-61
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:18:5-61
 	android:versionCode
-		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:17:11-69
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:17:11-69
 dist:module
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:5-40
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:22:5-40
 	dist:instant
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:22:18-37
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:22:18-37
 uses-feature#android.hardware.camera
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:5-60
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:25:5-60
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:25:19-57
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:25:19-57
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:5-65
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:28:5-65
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:28:22-62
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:28:22-62
 application
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:30:5-61:19
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:30:5-64:19
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:30:5-64:19
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\d878efcf913655dbea2be6c137ab6530\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\d878efcf913655dbea2be6c137ab6530\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\19f5064170c3a3dea93ea41a12183a7f\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -128,65 +128,71 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\bd116a082f13532794bbbfae725a4856\workspace\transformed\transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.18.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:35:9-35
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:34:9-35
 	android:label
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:33:9-41
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:32:9-41
 	tools:ignore
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:38:9-35
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:37:9-35
 	android:roundIcon
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:34:9-54
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:33:9-54
 	android:icon
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:32:9-43
-	android:allowBackup
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:31:9-35
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:31:9-43
 	android:theme
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:37:9-55
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:36:9-55
 	android:taskAffinity
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:36:9-32
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:35:9-32
 service#com.google.mediapipe.examples.gesturerecognizer.MyMediaListener
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:9-46:19
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:39:9-45:19
 	android:exported
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:42:13-36
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:41:13-36
 	android:permission
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:41:13-87
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:40:13-87
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:40:18-96
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:39:18-96
 intent-filter#action:name:android.service.notification.NotificationListenerService
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:43:13-45:29
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:42:13-44:29
 action#android.service.notification.NotificationListenerService
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:17-99
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:43:17-99
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:44:25-96
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:43:25-96
 activity#com.google.mediapipe.examples.gesturerecognizer.MainActivity
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:47:9-60:20
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:46:9-59:20
 	android:exported
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:49:13-36
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:48:13-41
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:47:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:50:13-54:29
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:17-69
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:51:25-66
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:17-77
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:53:27-74
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:52:27-74
 meta-data#android.notch_support
-ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:57:13-59:40
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:56:13-58:40
 	android:value
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:59:17-37
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:58:17-37
 	android:name
-		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml:58:17-53
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:57:17-53
+activity#com.google.mediapipe.examples.gesturerecognizer.SettingsActivity
+ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:60:9-63:58
+	android:parentActivityName
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:63:13-55
+	android:label
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:62:13-37
+	android:name
+		ADDED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml:61:13-45
 uses-sdk
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:9.0.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\d6e2703130f6e3507ddf88b37b1544fe\workspace\transformed\viewbinding-9.0.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:9.0.1] C:\Users\josem\.gradle\caches\9.1.0\transforms\d6e2703130f6e3507ddf88b37b1544fe\workspace\transformed\viewbinding-9.0.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.7] C:\Users\josem\.gradle\caches\9.1.0\transforms\fe74c361ce6cfc81e468cb7b0f269482\workspace\transformed\navigation-runtime-release\AndroidManifest.xml:20:5-44
@@ -328,9 +334,9 @@ MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\jose
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\70f65e2742b7ab707e8d94b72cf73a4a\workspace\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\josem\.gradle\caches\9.1.0\transforms\70f65e2742b7ab707e8d94b72cf73a4a\workspace\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 	android:targetSdkVersion
-		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\AndroidManifest.xml
 service#androidx.camera.core.impl.MetadataHolderService
 ADDED from [androidx.camera:camera-camera2:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\1fe4a36bb0b5dcb68480b5d2601dabbc\workspace\transformed\camera-camera2-1.5.3\AndroidManifest.xml:24:9-33:19
 MERGED from [androidx.camera:camera-core:1.5.3] C:\Users\josem\.gradle\caches\9.1.0\transforms\fa8138ed3fc75e79e25c55182c8e0d93\workspace\transformed\camera-core-1.5.3\AndroidManifest.xml:29:9-33:78

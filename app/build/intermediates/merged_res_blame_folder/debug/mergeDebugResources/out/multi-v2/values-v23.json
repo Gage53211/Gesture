@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-v23/values-v23.xml",
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-53:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\64689d89d7ffe9eec195f08f8b9b8ee3\\workspace\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",

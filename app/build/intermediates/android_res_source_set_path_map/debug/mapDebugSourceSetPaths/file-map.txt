@@ -50,10 +50,10 @@ com.google.mediapipe.examples.gesturerecognizer.app-navigation-ui-ktx-2.9.7-48 C
 com.google.mediapipe.examples.gesturerecognizer.app-core-1.18.0-49 C:\Users\josem\.gradle\caches\9.1.0\transforms\fe4c9b92d3a180392ef7be6f17e6db4c\workspace\transformed\core-1.18.0\res
 com.google.mediapipe.examples.gesturerecognizer.app-navigation-runtime-release-50 C:\Users\josem\.gradle\caches\9.1.0\transforms\fe74c361ce6cfc81e468cb7b0f269482\workspace\transformed\navigation-runtime-release\res
 com.google.mediapipe.examples.gesturerecognizer.app-tracing-1.2.0-51 C:\Users\josem\.gradle\caches\9.1.0\transforms\ffd3c9255c4b087fa32de47866fefb35\workspace\transformed\tracing-1.2.0\res
-com.google.mediapipe.examples.gesturerecognizer.app-pngs-52 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\build\generated\res\pngs\debug
-com.google.mediapipe.examples.gesturerecognizer.app-updated_navigation_xml-53 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\build\generated\updated_navigation_xml\debug
-com.google.mediapipe.examples.gesturerecognizer.app-packageDebugResources-54 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.google.mediapipe.examples.gesturerecognizer.app-packageDebugResources-55 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.google.mediapipe.examples.gesturerecognizer.app-debug-56 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.google.mediapipe.examples.gesturerecognizer.app-debug-57 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\debug\res
-com.google.mediapipe.examples.gesturerecognizer.app-main-58 C:\Users\josem\OneDrive\Documents\uniassigments\Cleanup\Gesture\app\src\main\res
+com.google.mediapipe.examples.gesturerecognizer.app-pngs-52 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\build\generated\res\pngs\debug
+com.google.mediapipe.examples.gesturerecognizer.app-updated_navigation_xml-53 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\build\generated\updated_navigation_xml\debug
+com.google.mediapipe.examples.gesturerecognizer.app-packageDebugResources-54 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.google.mediapipe.examples.gesturerecognizer.app-packageDebugResources-55 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.google.mediapipe.examples.gesturerecognizer.app-debug-56 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.google.mediapipe.examples.gesturerecognizer.app-debug-57 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\debug\res
+com.google.mediapipe.examples.gesturerecognizer.app-main-58 C:\Users\josem\OneDrive\Documents\uniassigments\Gesture\app\src\main\res

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values/values.xml",
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-53:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\23c666c1acd879208645068f9d2ed62e\\workspace\\transformed\\coordinatorlayout-1.1.0\\res\\values\\values.xml",
@@ -20,6 +20,25 @@
                         "endLines": "131,10729,12768,12852",
                         "endColumns": "60,12,24,24",
                         "endOffsets": "6993,752486,826758,831274"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Gesture\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "48,21,23,25,31,32,27,29,17,46,39,40,44,42,38,19,33,34,35",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2384,851,941,1066,1471,1573,1190,1331,743,2329,1976,2033,2231,2133,1911,799,1674,1722,1772",
+                        "endLines": "51,21,24,26,31,32,28,30,17,46,39,41,45,43,38,19,33,34,36",
+                        "endColumns": "19,86,50,23,100,99,68,68,52,51,55,26,26,26,63,48,46,48,57",
+                        "endOffsets": "2502,933,1060,1184,1567,1668,1325,1465,791,2376,2027,2127,2323,2225,1970,843,1716,1766,1903"
+                    },
+                    "to": {
+                        "startLines": "2,2552,2553,2555,2557,2558,2559,2561,2564,2593,2594,2595,2597,2599,2601,2643,2644,2645,2740",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "150,167636,167723,167846,167968,168069,168169,168308,168529,171571,171623,171679,171777,171873,171969,177243,177292,177339,190899",
+                        "endLines": "5,2552,2554,2556,2557,2558,2560,2562,2564,2593,2594,2596,2598,2600,2601,2643,2644,2645,2741",
+                        "endColumns": "19,86,50,23,100,99,68,68,52,51,55,26,26,26,63,48,46,48,57",
+                        "endOffsets": "265,167718,167841,167963,168064,168164,168303,168441,168577,171618,171674,171772,171868,171964,172028,177287,177334,177383,191029"
                     }
                 },
                 {
@@ -171,25 +190,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Cleanup\\Gesture\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "21,17",
-                        "startColumns": "4,4",
-                        "startOffsets": "936,743",
-                        "endLines": "23,19",
-                        "endColumns": "12,12",
-                        "endOffsets": "1059,928"
-                    },
-                    "to": {
-                        "startLines": "2768,6414",
-                        "startColumns": "4,4",
-                        "startOffsets": "192895,455634",
-                        "endLines": "2770,6416",
-                        "endColumns": "12,12",
-                        "endOffsets": "193016,455817"
-                    }
-                },
-                {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\690e85ab868fdcdb2a66c2e040b1c353\\workspace\\transformed\\viewpager2-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -226,6 +226,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Gesture\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "25,26,24,22,23,27,28,21,31,18,17,30",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1097,1159,1033,923,976,1229,1302,868,1441,787,743,1374",
+                        "endColumns": "60,68,62,51,55,71,68,53,41,50,42,65",
+                        "endOffsets": "1153,1223,1091,970,1027,1296,1366,917,1478,833,781,1435"
+                    },
+                    "to": {
+                        "startLines": "1363,1364,1365,1366,1367,1368,1369,1370,1435,2313,2315,2451",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "79293,79354,79423,79486,79538,79594,79666,79735,83954,153000,153114,160753",
+                        "endColumns": "60,68,62,51,55,71,68,53,41,50,42,65",
+                        "endOffsets": "79349,79418,79481,79533,79589,79661,79730,79784,83991,153046,153152,160814"
+                    }
+                },
+                {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\a0a3c55f9340083e6a455886223094a0\\workspace\\transformed\\lifecycle-viewmodel-release\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -240,23 +257,6 @@
                         "startOffsets": "160447",
                         "endColumns": "49",
                         "endOffsets": "160492"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Cleanup\\Gesture\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "25,26,27,28,29,24,22,17,19,18,20,21,23",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1190,1249,1321,1367,1414,1132,1028,743,855,795,912,966,1078",
-                        "endColumns": "57,70,44,45,45,56,48,50,55,58,52,60,52",
-                        "endOffsets": "1243,1315,1361,1408,1455,1184,1072,789,906,849,960,1022,1126"
-                    },
-                    "to": {
-                        "startLines": "802,803,863,864,865,866,1244,1245,1246,1247,1248,1249,1278",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "40497,40555,44751,44796,44842,44888,71245,71294,71345,71401,71460,71513,73605",
-                        "endColumns": "57,70,44,45,45,56,48,50,55,58,52,60,52",
-                        "endOffsets": "40550,40621,44791,44837,44883,44940,71289,71340,71396,71455,71508,71569,73653"
                     }
                 },
                 {
@@ -370,25 +370,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Cleanup\\Gesture\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "17",
-                        "startColumns": "4",
-                        "startOffsets": "827",
-                        "endLines": "29",
-                        "endColumns": "12",
-                        "endOffsets": "1602"
-                    },
-                    "to": {
-                        "startLines": "7553",
-                        "startColumns": "4",
-                        "startOffsets": "532813",
-                        "endLines": "7565",
-                        "endColumns": "12",
-                        "endOffsets": "533455"
-                    }
-                },
-                {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\73e74d36619cf85bb48e73301b516624\\workspace\\transformed\\navigation-common-release\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,15,21,27,30",
@@ -408,25 +389,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Cleanup\\Gesture\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "48,21,23,25,31,32,27,29,17,46,39,40,44,42,38,19,33,34,35",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2384,851,941,1066,1471,1573,1190,1331,743,2329,1976,2033,2231,2133,1911,799,1674,1722,1772",
-                        "endLines": "51,21,24,26,31,32,28,30,17,46,39,41,45,43,38,19,33,34,36",
-                        "endColumns": "19,86,50,23,100,99,68,68,52,51,55,26,26,26,63,48,46,48,57",
-                        "endOffsets": "2502,933,1060,1184,1567,1668,1325,1465,791,2376,2027,2127,2323,2225,1970,843,1716,1766,1903"
-                    },
-                    "to": {
-                        "startLines": "2,2552,2553,2555,2557,2558,2559,2561,2564,2593,2594,2595,2597,2599,2601,2643,2644,2645,2740",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "150,167636,167723,167846,167968,168069,168169,168308,168529,171571,171623,171679,171777,171873,171969,177243,177292,177339,190899",
-                        "endLines": "5,2552,2554,2556,2557,2558,2560,2562,2564,2593,2594,2596,2598,2600,2601,2643,2644,2645,2741",
-                        "endColumns": "19,86,50,23,100,99,68,68,52,51,55,26,26,26,63,48,46,48,57",
-                        "endOffsets": "265,167718,167841,167963,168064,168164,168303,168441,168577,171618,171674,171772,171868,171964,172028,177287,177334,177383,191029"
-                    }
-                },
-                {
                     "source": "C:\\Users\\josem\\.gradle\\caches\\9.1.0\\transforms\\701629143df8095f240e91920e733951\\workspace\\transformed\\startup-runtime-1.1.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -441,6 +403,25 @@
                         "startOffsets": "168446",
                         "endColumns": "82",
                         "endOffsets": "168524"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Gesture\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "21,17",
+                        "startColumns": "4,4",
+                        "startOffsets": "936,743",
+                        "endLines": "23,19",
+                        "endColumns": "12,12",
+                        "endOffsets": "1059,928"
+                    },
+                    "to": {
+                        "startLines": "2768,6414",
+                        "startColumns": "4,4",
+                        "startOffsets": "192895,455634",
+                        "endLines": "2770,6416",
+                        "endColumns": "12,12",
+                        "endOffsets": "193016,455817"
                     }
                 },
                 {
@@ -477,6 +458,25 @@
                         "startOffsets": "156332,156372,157706,157930,157985,159703,159748,159802,159858,159910,159962,160011,160072",
                         "endColumns": "39,46,42,54,46,44,53,55,51,51,48,60,49",
                         "endOffsets": "156367,156414,157744,157980,158027,159743,159797,159853,159905,159957,160006,160067,160117"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Gesture\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "827",
+                        "endLines": "29",
+                        "endColumns": "12",
+                        "endOffsets": "1602"
+                    },
+                    "to": {
+                        "startLines": "7553",
+                        "startColumns": "4",
+                        "startOffsets": "532813",
+                        "endLines": "7565",
+                        "endColumns": "12",
+                        "endOffsets": "533455"
                     }
                 },
                 {
@@ -518,20 +518,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Cleanup\\Gesture\\app\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\josem\\OneDrive\\Documents\\uniassigments\\Gesture\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "25,26,24,22,23,27,28,21,31,18,17,30",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1097,1159,1033,923,976,1229,1302,868,1441,787,743,1374",
-                        "endColumns": "60,68,62,51,55,71,68,53,41,50,42,65",
-                        "endOffsets": "1153,1223,1091,970,1027,1296,1366,917,1478,833,781,1435"
+                        "startLines": "25,26,27,28,29,24,22,17,19,18,20,21,23",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1190,1249,1321,1367,1414,1132,1028,743,855,795,912,966,1078",
+                        "endColumns": "57,70,44,45,45,56,48,50,55,58,52,60,52",
+                        "endOffsets": "1243,1315,1361,1408,1455,1184,1072,789,906,849,960,1022,1126"
                     },
                     "to": {
-                        "startLines": "1363,1364,1365,1366,1367,1368,1369,1370,1435,2313,2315,2451",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "79293,79354,79423,79486,79538,79594,79666,79735,83954,153000,153114,160753",
-                        "endColumns": "60,68,62,51,55,71,68,53,41,50,42,65",
-                        "endOffsets": "79349,79418,79481,79533,79589,79661,79730,79784,83991,153046,153152,160814"
+                        "startLines": "802,803,863,864,865,866,1244,1245,1246,1247,1248,1249,1278",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "40497,40555,44751,44796,44842,44888,71245,71294,71345,71401,71460,71513,73605",
+                        "endColumns": "57,70,44,45,45,56,48,50,55,58,52,60,52",
+                        "endOffsets": "40550,40621,44791,44837,44883,44940,71289,71340,71396,71455,71508,71569,73653"
                     }
                 }
             ]

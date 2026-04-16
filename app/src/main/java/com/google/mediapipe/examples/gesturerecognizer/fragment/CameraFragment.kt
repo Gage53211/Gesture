@@ -70,11 +70,31 @@ class CameraFragment : Fragment(),
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
 
+    private var lastGestureSeen = 0L
+    private var pausePlayDelay = 1500L
+    private var volumeDelay = 500L
+    private var prevDelay = 1500L
+    private var nextDelay = 1900L
+    private var noHandRecoginzedDelay = 2000L
+    private var nextAppDelay = 3000L
+
+    private var likeDislikeDelay = 1500L
+
+    private fun loadSettings(){
+        val prefs = requireContext().getSharedPreferences("GestureSettings", android.content.Context.MODE_PRIVATE)
+        pausePlayDelay = prefs.getInt("gen_delay", 1500).toLong()
+        volumeDelay = prefs.getInt("vol_delay", 500).toLong()
+        nextDelay = prefs.getInt("next_delay", 1900).toLong()
+        prevDelay = prefs.getInt("prev_delay", 1500).toLong()
+        nextAppDelay = prefs.getInt("next_app_delay", 3000).toLong()
+    }
+
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
     override fun onResume() {
         super.onResume()
+        loadSettings()
         // Make sure that all permissions are still present, since the
         // user could have removed them while the app was in paused state.
         if (!PermissionsFragment.hasPermissions(requireContext())) {
@@ -247,13 +267,7 @@ class CameraFragment : Fragment(),
     // hands are seen in the camera frame, only one will be processed.
     //Should control phone using gestures
     //Delays for different controls volume is 500ms delay while others have a one second delay
-    private var lastgestureseen = 0L
-    private var gesturedelay = 1500L
-    private var volumedelay = 500L
-    private var prevdelay = 1500L
-    private var nextdelay = 1900L
-    private var nohandrecoginzeddelay = 2000L
-    private var nextappdelay = 3000L
+
 
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
@@ -264,73 +278,88 @@ class CameraFragment : Fragment(),
                 val gestureCategories = resultBundle.results.first().gestures()
                 val gestureResult = gestureCategories.firstOrNull()?.firstOrNull()
                 val timestart = System.currentTimeMillis()
-                val currentdelay =when(gestureResult?.categoryName()){
-                    "Thumb_Up" -> volumedelay
-                    "Thumb_Down" -> volumedelay
-                    "Pointing_Up" -> prevdelay
-                    "Victory" -> nextdelay
-                    "None" -> nohandrecoginzeddelay
-                    "ILoveYou" -> nextappdelay
-                    else -> gesturedelay
+                val currentdelay = when(gestureResult?.categoryName()){
+                    "vol_up" -> volumeDelay
+                    "vol_down" -> volumeDelay
+                    "prev_track" -> prevDelay
+                    "next_track" -> nextDelay
+                    "none" -> noHandRecoginzedDelay
+                    "next_app" -> nextAppDelay
+                    "prev_app" -> nextAppDelay
+                    "like" -> likeDislikeDelay
+                    else -> pausePlayDelay
                 }
-                if (gestureCategories.isNotEmpty() && (timestart - lastgestureseen) > currentdelay) {
-                    lastgestureseen = timestart
+                if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
+                    lastGestureSeen = timestart
                     when (gestureResult?.categoryName()){
-                        "Closed_Fist" ->pause()
-                        "Open_Palm" -> play()
-                        "Thumb_Up" -> volumeup()
-                        "Thumb_Down" -> volumedown()
-                        "Pointing_Up" -> prev()
-                        "Victory" -> skip()
-                        "ILoveYou" -> next()
+                        "pause" ->pause()
+                        "play" -> play()
+                        "vol_up" -> volumeUp()
+                        "vol_down" -> volumeDown()
+                        "prev_track" -> prevTrack()
+                        "next_track" -> nextTrack()
+                        "next_app" -> nextApp()
+                        "prev_app" -> prevApp()
+                        "like" -> likeDislike()
                     }
+                }
+                if (gestureCategories.isEmpty()) {
+                    gestureRecognizerResultAdapter.updateResults(emptyList())
+                }else{
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
                     )
-                } else{
-                    gestureRecognizerResultAdapter.updateResults(emptyList())
                 }
-                // Pass necessary information to OverlayView for drawing on the canvas
-                fragmentCameraBinding.overlay.setResults(
-                    resultBundle.results.first(),
-                    resultBundle.inputImageHeight,
-                    resultBundle.inputImageWidth
-                )
-
-                // Force a redraw
-                fragmentCameraBinding.overlay.invalidate()
             }
+            // Pass necessary information to OverlayView for drawing on the canvas
+            fragmentCameraBinding.overlay.setResults(
+                resultBundle.results.first(),
+                resultBundle.inputImageHeight,
+                resultBundle.inputImageWidth
+            )
+
+            // Force a redraw
+            fragmentCameraBinding.overlay.invalidate()
         }
     }
-    private fun volumeup(){
-        val intentvolup = Intent("ACTION_VOLUME_UP")
-        context?.sendBroadcast(intentvolup)
+    private fun volumeUp(){
+        val intent = Intent("ACTION_VOLUME_UP")
+        context?.sendBroadcast(intent)
     }
-    private fun volumedown(){
-        val intentvoldown = Intent("ACTION_VOLUME_DOWN")
-        context?.sendBroadcast(intentvoldown)
+    private fun volumeDown(){
+        val intent = Intent("ACTION_VOLUME_DOWN")
+        context?.sendBroadcast(intent)
     }
     private fun pause(){
-        val intentpause = Intent("ACTION_PAUSE")
-        context?.sendBroadcast(intentpause)
+        val intent = Intent("ACTION_PAUSE")
+        context?.sendBroadcast(intent)
     }
     private fun play(){
-        val intentplay = Intent("ACTION_PLAY")
-        context?.sendBroadcast(intentplay)
+        val intent = Intent("ACTION_PLAY")
+        context?.sendBroadcast(intent)
     }
-    private fun skip(){
-        val intentskip = Intent("ACTION_SKIP")
-        context?.sendBroadcast(intentskip)
+    private fun nextTrack(){
+        val intent = Intent("ACTION_SKIP")
+        context?.sendBroadcast(intent)
     }
-    private fun prev(){
-        val intentprev = Intent("ACTION_PREV")
-        context?.sendBroadcast(intentprev)
+    private fun prevTrack(){
+        val intent = Intent("ACTION_PREV")
+        context?.sendBroadcast(intent)
     }
-    private fun next() {
-        val intentnext = Intent("ACTION_NEXT_APP")
-        context?.sendBroadcast(intentnext)
+    private fun nextApp() {
+        val intent = Intent("ACTION_NEXT_APP")
+        context?.sendBroadcast(intent)
     }
 
+    private fun prevApp() {
+        val intent = Intent("ACTION_PREV_APP")
+        context?.sendBroadcast(intent)
+    }
+
+    private fun likeDislike() {
+        val intent = Intent("ACTION_LIKE_DISLIKE")
+        context?.sendBroadcast(intent)
+    }
 
     override fun onError(error: String, errorCode: Int) {
         activity?.runOnUiThread {

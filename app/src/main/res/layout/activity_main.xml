@@ -19,23 +19,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent">
+    android:background="@android:color/transparent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/dropdown_menu"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/dropmenu"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="?android:attr/actionBarSize"
             android:background="@android:color/transparent"
             android:keepScreenOn="true"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph"
+            tools:context=".MainActivity"
+            tools:layout="@layout/fragment_camera" />
             tools:context=".MainActivity" />
 
         <LinearLayout
@@ -79,7 +94,7 @@
         </LinearLayout>
 
 
-
-
     </RelativeLayout>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

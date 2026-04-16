@@ -18,9 +18,12 @@ package com.google.mediapipe.examples.gesturerecognizer
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
+import androidx.core.view.WindowCompat
 import android.widget.SeekBar
 
 class MainActivity : AppCompatActivity() {
@@ -30,15 +33,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         if (!isNotificationServiceEnabled()) {
             startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
         }
+        WindowCompat.setDecorFitsSystemWindows(window, true)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navHostFragment.navController
 
+        val toolbar = findViewById<MaterialToolbar>(R.id.dropdown_menu)
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.settings -> {
+                    navigatetoSettings()
+                    true
+                }
+                R.id.help -> {
+                    true
+                }
+                else -> false
+            }
+        }
+
+    }
+    private fun navigatetoSettings(){
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
         // Dummy Vars
         val totalSeconds = 210 // 3 minutes and 30 seconds
 
