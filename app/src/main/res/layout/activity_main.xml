@@ -51,7 +51,6 @@
             app:navGraph="@navigation/nav_graph"
             tools:context=".MainActivity"
             tools:layout="@layout/fragment_camera" />
-            tools:context=".MainActivity" />
 
         <LinearLayout
             android:layout_width="match_parent"
