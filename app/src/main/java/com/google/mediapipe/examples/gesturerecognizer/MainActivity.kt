@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.help -> {
+                    navigatetoTutorial()
                     true
                 }
                 else -> false
@@ -71,6 +72,11 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.totalTime.text = formatTime(totalSeconds)
         activityMainBinding.currentTime.text = formatTime(45)
 
+    }
+    //This is the function called to change the intent to the tutorial activity
+    private fun navigatetoTutorial(){
+        val intent = Intent(this, TutorialActivity::class.java)
+        startActivity(intent)
     }
 
     private fun formatTime(seconds: Int): String {
