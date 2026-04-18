@@ -24,6 +24,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
 import androidx.core.view.WindowCompat
+import android.widget.SeekBar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         if (!isNotificationServiceEnabled()) {
             startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
         }
@@ -60,11 +62,26 @@ class MainActivity : AppCompatActivity() {
     private fun navigatetoSettings(){
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
+        // Dummy Vars
+        val totalSeconds = 210 // 3 minutes and 30 seconds
+
+        activityMainBinding.musicSeekBar.max = totalSeconds
+        activityMainBinding.musicSeekBar.progress = 45
+
+        activityMainBinding.totalTime.text = formatTime(totalSeconds)
+        activityMainBinding.currentTime.text = formatTime(45)
+
     }
+
+    private fun formatTime(seconds: Int): String {
+        val minutes = seconds / 60
+        val remainingSeconds = seconds % 60
+        return String.format("%02d:%02d", minutes, remainingSeconds)
+    }
+
     private fun isNotificationServiceEnabled(): Boolean {
         val pkgName = packageName
         val flat = Settings.Secure.getString(contentResolver, "enabled_notification_listeners")
         return flat?.contains(pkgName) == true
     }
-
 }
