@@ -23,7 +23,7 @@
         <!-- Secondary brand color. -->
         <item name="colorError">@color/color_error</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:statusBarColor">@color/color_primary</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

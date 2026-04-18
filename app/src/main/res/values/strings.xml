@@ -60,6 +60,12 @@
     <string name="previous_song_cooldown">Previous Song Cooldown</string>
     <string name="cooldown_for_going_to_previous_song">Cooldown for going to previous song</string>
     <string name="_1900_ms">1900 ms</string>
+    <string name="like_dislike_cooldown">Like/Dislike Cooldown</string>
+    <string name="response_to_like_dislike">How fast the response to like/dislike is</string>
+    <string name="cooldown_between_like_dislike">Cooldown between like/dislike</string>
+
+
+
 
     <string-array name="delegate_spinner_titles">
         <item>CPU</item>

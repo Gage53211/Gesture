@@ -77,9 +77,11 @@ class CameraFragment : Fragment(),
     private var nextDelay = 1900L
     private var noHandRecoginzedDelay = 2000L
     private var nextAppDelay = 3000L
-
     private var likeDislikeDelay = 1500L
+    private var lastgestureSeenv2: Long = 0
+    private var generaldelay = 500L
 
+    //Get user custom delays
     private fun loadSettings(){
         val prefs = requireContext().getSharedPreferences("GestureSettings", android.content.Context.MODE_PRIVATE)
         pausePlayDelay = prefs.getInt("gen_delay", 1500).toLong()
@@ -87,6 +89,7 @@ class CameraFragment : Fragment(),
         nextDelay = prefs.getInt("next_delay", 1900).toLong()
         prevDelay = prefs.getInt("prev_delay", 1500).toLong()
         nextAppDelay = prefs.getInt("next_app_delay", 3000).toLong()
+        likeDislikeDelay = prefs.getInt("like_dislike_delay", 1500).toLong()
     }
 
     /** Blocking ML operations are performed using this executor */
@@ -278,6 +281,7 @@ class CameraFragment : Fragment(),
                 val gestureCategories = resultBundle.results.first().gestures()
                 val gestureResult = gestureCategories.firstOrNull()?.firstOrNull()
                 val timestart = System.currentTimeMillis()
+                val generaltimestart = System.currentTimeMillis()
                 val currentdelay = when(gestureResult?.categoryName()){
                     "vol_up" -> volumeDelay
                     "vol_down" -> volumeDelay
@@ -289,18 +293,21 @@ class CameraFragment : Fragment(),
                     "like" -> likeDislikeDelay
                     else -> pausePlayDelay
                 }
-                if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
-                    lastGestureSeen = timestart
-                    when (gestureResult?.categoryName()){
-                        "pause" ->pause()
-                        "play" -> play()
-                        "vol_up" -> volumeUp()
-                        "vol_down" -> volumeDown()
-                        "prev_track" -> prevTrack()
-                        "next_track" -> nextTrack()
-                        "next_app" -> nextApp()
-                        "prev_app" -> prevApp()
-                        "like" -> likeDislike()
+                if (generaltimestart-lastgestureSeenv2 > generaldelay) {
+                    lastgestureSeenv2 = generaltimestart
+                    if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
+                        lastGestureSeen = timestart
+                        when (gestureResult?.categoryName()) {
+                            "pause" -> pause()
+                            "play" -> play()
+                            "vol_up" -> volumeUp()
+                            "vol_down" -> volumeDown()
+                            "prev_track" -> prevTrack()
+                            "next_track" -> nextTrack()
+                            "next_app" -> nextApp()
+                            "prev_app" -> prevApp()
+                            "like" -> likeDislike()
+                        }
                     }
                 }
                 if (gestureCategories.isEmpty()) {
