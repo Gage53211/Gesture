@@ -78,8 +78,8 @@ class CameraFragment : Fragment(),
     private var noHandRecoginzedDelay = 2000L
     private var nextAppDelay = 3000L
     private var likeDislikeDelay = 1500L
-    private var lastgestureSeenv2: Long = 0
-    private var generaldelay = 500L
+
+
 
     //Get user custom delays
     private fun loadSettings(){
@@ -281,7 +281,6 @@ class CameraFragment : Fragment(),
                 val gestureCategories = resultBundle.results.first().gestures()
                 val gestureResult = gestureCategories.firstOrNull()?.firstOrNull()
                 val timestart = System.currentTimeMillis()
-                val generaltimestart = System.currentTimeMillis()
                 val currentdelay = when(gestureResult?.categoryName()){
                     "vol_up" -> volumeDelay
                     "vol_down" -> volumeDelay
@@ -293,8 +292,6 @@ class CameraFragment : Fragment(),
                     "like" -> likeDislikeDelay
                     else -> pausePlayDelay
                 }
-                if (generaltimestart-lastgestureSeenv2 > generaldelay) {
-                    lastgestureSeenv2 = generaltimestart
                     if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
                         lastGestureSeen = timestart
                         when (gestureResult?.categoryName()) {
@@ -309,7 +306,6 @@ class CameraFragment : Fragment(),
                             "like" -> likeDislike()
                         }
                     }
-                }
                 if (gestureCategories.isEmpty()) {
                     gestureRecognizerResultAdapter.updateResults(emptyList())
                 }else{
