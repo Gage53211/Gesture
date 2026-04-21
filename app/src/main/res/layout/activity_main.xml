@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/dropmenu"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary" />
+            style="@style/AppThemeProgressStyle"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout

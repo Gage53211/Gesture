@@ -23,8 +23,9 @@
         <!-- Secondary brand color. -->
         <item name="colorError">@color/color_error</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:statusBarColor">@color/color_primary</item>
         <!-- Customize your theme here. -->
+
     </style>
   <!-- Base application theme. -->
     <style name="Base.Theme.GestureRecognizer" parent="Theme.Material3.DayNight.NoActionBar">

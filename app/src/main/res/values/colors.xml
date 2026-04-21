@@ -16,6 +16,7 @@
 -->
 <resources>
     <color name="color_primary">@android:color/black</color>
+    <color name="color_secondary">@android:color/white</color>
     <color name="color_primary_variant">#12B5CB</color>
     <color name="color_primary_dark">#00676D</color>
     <color name="color_error">#B00020</color>
@@ -26,5 +27,6 @@
     <color name="icFocused">#DDFFFFFF</color>
     <color name="icPressed">#AAFFFFFF</color>
     <color name="SettingsTextcolor">#8a2be2</color>
+    <color name="Textcolor">#8a2be2</color>
 
 </resources>
