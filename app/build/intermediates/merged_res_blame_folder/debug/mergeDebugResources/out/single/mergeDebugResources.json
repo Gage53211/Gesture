@@ -1,74 +1,158 @@
 [
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\layout_fragment_camera.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\fragment_camera.xml"
-    },
-    {
         "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/layout_activity_tutorial.xml.flat",
         "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_tutorial.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\layout_activity_tutorial.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\activity_tutorial.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxxhdpi_gesture_logo_foreground.webp.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxxhdpi/gesture_logo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\menu_dropmenu.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\menu\\dropmenu.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_open_palm.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/open_palm.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\color_bg_nav_item.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\color\\bg_nav_item.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-mdpi_gesture_logo_foreground.webp.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-mdpi/gesture_logo_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\activity_main.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/layout_item_gesture_recognizer_result.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/item_gesture_recognizer_result.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_prev_track.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/prev_track.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_vol_up.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/vol_up.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_two_finger_point_thumb_up.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/two_finger_point_thumb_up.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\layout_item_gesture_recognizer_result.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\item_gesture_recognizer_result.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/layout_fragment_camera.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/fragment_camera.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/color_bg_nav_item.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/color/bg_nav_item.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_like_dislike_thumbs_up.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/like_dislike_thumbs_up.png"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-debug-56:\\layout_activity_settings.xml.flat",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\activity_settings.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxhdpi_gesture_logo_cd.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxhdpi/gesture_logo_cd.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_vol_down.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/vol_down.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/layout_activity_main.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-hdpi_gesture_logo_cd.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-hdpi/gesture_logo_cd.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_gesture_logo_background.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/gesture_logo_background.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxxhdpi_gesture_logo_cd.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxxhdpi/gesture_logo_cd.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/menu_dropmenu.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/menu/dropmenu.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxhdpi_gesture_logo_foreground.webp.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxhdpi/gesture_logo_foreground.webp"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xhdpi_gesture_logo_foreground.webp.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xhdpi/gesture_logo_foreground.webp"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_flat_hand_side.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/flat_hand_side.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_two_finger_thumb_down.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/two_finger_thumb_down.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-mdpi_gesture_logo_cd.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-mdpi/gesture_logo_cd.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xhdpi_gesture_logo_cd.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xhdpi/gesture_logo_cd.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/drawable_next_track.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/drawable/next_track.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-hdpi_gesture_logo_foreground.webp.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-hdpi/gesture_logo_foreground.webp"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-56:/layout_activity_settings.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_settings.xml"
     }
 ]

@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/noormohamed/Downloads/School/Spring 2026/Senior Experience in CS/GitHub/app/src/main/res/values-w1240dp/dimens.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "6",
+                        "startOffsets": "18",
+                        "endColumns": "44",
+                        "endOffsets": "56"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "42",
+                        "endOffsets": "93"
+                    }
+                }
+            ]
+        }
+    ]
+}

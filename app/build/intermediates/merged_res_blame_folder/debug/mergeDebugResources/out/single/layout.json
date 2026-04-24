@@ -1,26 +1,22 @@
 [
     {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:/layout/fragment_camera.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/fragment_camera.xml"
+    },
+    {
         "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:/layout/activity_tutorial.xml",
         "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_tutorial.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:\\layout\\fragment_camera.xml",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\fragment_camera.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:/layout/activity_main.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:\\layout\\activity_settings.xml",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\activity_settings.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:/layout/activity_settings.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/activity_settings.xml"
     },
     {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:\\layout\\item_gesture_recognizer_result.xml",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\item_gesture_recognizer_result.xml"
-    },
-    {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:\\layout\\activity_tutorial.xml",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\activity_tutorial.xml"
-    },
-    {
-        "merged": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\motoe\\.gradle\\daemon\\9.1.0\\com.google.mediapipe.examples.gesturerecognizer.app-main-58:\\layout\\activity_main.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-55:/layout/item_gesture_recognizer_result.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-58:/layout/item_gesture_recognizer_result.xml"
     }
 ]

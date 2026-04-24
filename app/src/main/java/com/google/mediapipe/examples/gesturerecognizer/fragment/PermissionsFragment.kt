@@ -19,73 +19,64 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.google.mediapipe.examples.gesturerecognizer.MainActivity
 import com.google.mediapipe.examples.gesturerecognizer.R
-import androidx.navigation.findNavController
-
-private val PERMISSIONS_REQUIRED = arrayOf(Manifest.permission.CAMERA)
 
 class PermissionsFragment : Fragment() {
 
     private val requestPermissionLauncher =
-        registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted: Boolean ->
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
             if (isGranted) {
-                Toast.makeText(
-                    context,
-                    "Permission request granted",
-                    Toast.LENGTH_LONG
-                ).show()
                 navigateToCamera()
             } else {
-                Toast.makeText(
-                    context,
-                    "Permission request denied",
-                    Toast.LENGTH_LONG
-                ).show()
+                (activity as? MainActivity)?.checkPermissionsAndTutorial()
             }
         }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        when (PackageManager.PERMISSION_GRANTED) {
-            ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.CAMERA
-            ) -> {
-                navigateToCamera()
-            }
-            else -> {
-                requestPermissionLauncher.launch(
-                    Manifest.permission.CAMERA
-                )
-            }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return View(context)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Checks if permission was granted while the app was in the background/settings
+        if (hasPermissions(requireContext())) {
+            navigateToCamera()
         }
     }
 
-    @Suppress("DEPRECATION")
-    //Tried to upgrade it but app breaks
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (hasPermissions(requireContext())) {
+            navigateToCamera()
+        } else {
+            requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+        }
+    }
+
     private fun navigateToCamera() {
-        lifecycleScope.launchWhenStarted {
-            requireActivity().findNavController(R.id.fragment_container).navigate(
-                R.id.action_permissions_to_camera
-            )
+        view?.post {
+            if (isAdded) {
+                try {
+                    // Navigate only if we are currently on the permissions screen
+                    findNavController().navigate(R.id.action_permissions_to_camera)
+                } catch (e: Exception) {
+                    // Already navigated
+                }
+            }
         }
     }
 
     companion object {
-
-        /** Convenience method used to check if all permissions required by this app are granted */
-        fun hasPermissions(context: Context) = PERMISSIONS_REQUIRED.all {
-            ContextCompat.checkSelfPermission(
-                context,
-                it
-            ) == PackageManager.PERMISSION_GRANTED
-        }
+        fun hasPermissions(context: Context) = ContextCompat.checkSelfPermission(
+            context, Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED
     }
 }

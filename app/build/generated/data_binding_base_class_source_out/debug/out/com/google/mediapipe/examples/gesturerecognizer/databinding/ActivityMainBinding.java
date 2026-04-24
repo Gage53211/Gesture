@@ -4,6 +4,8 @@ package com.google.mediapipe.examples.gesturerecognizer.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -21,16 +23,29 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final TextView currentTime;
+
+  @NonNull
   public final MaterialToolbar dropdownMenu;
 
   @NonNull
   public final FragmentContainerView fragmentContainer;
 
-  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull MaterialToolbar dropdownMenu, @NonNull FragmentContainerView fragmentContainer) {
+  @NonNull
+  public final SeekBar musicSeekBar;
+
+  @NonNull
+  public final TextView totalTime;
+
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView, @NonNull TextView currentTime,
+      @NonNull MaterialToolbar dropdownMenu, @NonNull FragmentContainerView fragmentContainer,
+      @NonNull SeekBar musicSeekBar, @NonNull TextView totalTime) {
     this.rootView = rootView;
+    this.currentTime = currentTime;
     this.dropdownMenu = dropdownMenu;
     this.fragmentContainer = fragmentContainer;
+    this.musicSeekBar = musicSeekBar;
+    this.totalTime = totalTime;
   }
 
   @Override
@@ -60,6 +75,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.currentTime;
+      TextView currentTime = ViewBindings.findChildViewById(rootView, id);
+      if (currentTime == null) {
+        break missingId;
+      }
+
       id = R.id.dropdown_menu;
       MaterialToolbar dropdownMenu = ViewBindings.findChildViewById(rootView, id);
       if (dropdownMenu == null) {
@@ -72,7 +93,20 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, dropdownMenu, fragmentContainer);
+      id = R.id.musicSeekBar;
+      SeekBar musicSeekBar = ViewBindings.findChildViewById(rootView, id);
+      if (musicSeekBar == null) {
+        break missingId;
+      }
+
+      id = R.id.totalTime;
+      TextView totalTime = ViewBindings.findChildViewById(rootView, id);
+      if (totalTime == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((CoordinatorLayout) rootView, currentTime, dropdownMenu,
+          fragmentContainer, musicSeekBar, totalTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

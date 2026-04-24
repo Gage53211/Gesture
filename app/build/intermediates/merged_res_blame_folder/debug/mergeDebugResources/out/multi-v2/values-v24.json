@@ -4,17 +4,7 @@
             "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-54:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\motoe\\.gradle\\caches\\9.1.0\\transforms\\562f3a60eae8a7aa567e46f3669740e0\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\motoe\\.gradle\\caches\\9.1.0\\transforms\\d878efcf913655dbea2be6c137ab6530\\workspace\\transformed\\material-1.13.0\\res\\values-v24\\values-v24.xml",
+                    "source": "/Users/noormohamed/.gradle/caches/9.1.0/transforms/d878efcf913655dbea2be6c137ab6530/transformed/material-1.13.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
+                    }
+                },
+                {
+                    "source": "/Users/noormohamed/.gradle/caches/9.1.0/transforms/562f3a60eae8a7aa567e46f3669740e0/transformed/appcompat-1.7.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

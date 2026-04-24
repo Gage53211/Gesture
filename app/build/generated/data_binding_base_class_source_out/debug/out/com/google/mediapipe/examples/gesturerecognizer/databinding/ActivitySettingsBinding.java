@@ -36,13 +36,25 @@ public final class ActivitySettingsBinding implements ViewBinding {
   public final SeekBar sbVolDelay;
 
   @NonNull
+  public final TextView tvNavLabel;
+
+  @NonNull
   public final TextView tvNavValue;
+
+  @NonNull
+  public final TextView tvNextSongLabel;
 
   @NonNull
   public final TextView tvNextSongValue;
 
   @NonNull
+  public final TextView tvPausePlayLabel;
+
+  @NonNull
   public final TextView tvPausePlayValue;
+
+  @NonNull
+  public final TextView tvPrevSongLabel;
 
   @NonNull
   public final TextView tvPrevSongValue;
@@ -58,8 +70,10 @@ public final class ActivitySettingsBinding implements ViewBinding {
 
   private ActivitySettingsBinding(@NonNull ScrollView rootView, @NonNull SeekBar sbNextAppDelay,
       @NonNull SeekBar sbNextSongDelay, @NonNull SeekBar sbPausePlayDelay,
-      @NonNull SeekBar sbPrevDelay, @NonNull SeekBar sbVolDelay, @NonNull TextView tvNavValue,
-      @NonNull TextView tvNextSongValue, @NonNull TextView tvPausePlayValue,
+      @NonNull SeekBar sbPrevDelay, @NonNull SeekBar sbVolDelay, @NonNull TextView tvNavLabel,
+      @NonNull TextView tvNavValue, @NonNull TextView tvNextSongLabel,
+      @NonNull TextView tvNextSongValue, @NonNull TextView tvPausePlayLabel,
+      @NonNull TextView tvPausePlayValue, @NonNull TextView tvPrevSongLabel,
       @NonNull TextView tvPrevSongValue, @NonNull TextView tvTitle, @NonNull TextView tvVolLabel,
       @NonNull TextView tvVolValue) {
     this.rootView = rootView;
@@ -68,9 +82,13 @@ public final class ActivitySettingsBinding implements ViewBinding {
     this.sbPausePlayDelay = sbPausePlayDelay;
     this.sbPrevDelay = sbPrevDelay;
     this.sbVolDelay = sbVolDelay;
+    this.tvNavLabel = tvNavLabel;
     this.tvNavValue = tvNavValue;
+    this.tvNextSongLabel = tvNextSongLabel;
     this.tvNextSongValue = tvNextSongValue;
+    this.tvPausePlayLabel = tvPausePlayLabel;
     this.tvPausePlayValue = tvPausePlayValue;
+    this.tvPrevSongLabel = tvPrevSongLabel;
     this.tvPrevSongValue = tvPrevSongValue;
     this.tvTitle = tvTitle;
     this.tvVolLabel = tvVolLabel;
@@ -134,9 +152,21 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvNavLabel;
+      TextView tvNavLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvNavLabel == null) {
+        break missingId;
+      }
+
       id = R.id.tvNavValue;
       TextView tvNavValue = ViewBindings.findChildViewById(rootView, id);
       if (tvNavValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tvNextSongLabel;
+      TextView tvNextSongLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvNextSongLabel == null) {
         break missingId;
       }
 
@@ -146,9 +176,21 @@ public final class ActivitySettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvPausePlayLabel;
+      TextView tvPausePlayLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvPausePlayLabel == null) {
+        break missingId;
+      }
+
       id = R.id.tvPausePlayValue;
       TextView tvPausePlayValue = ViewBindings.findChildViewById(rootView, id);
       if (tvPausePlayValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPrevSongLabel;
+      TextView tvPrevSongLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvPrevSongLabel == null) {
         break missingId;
       }
 
@@ -177,8 +219,9 @@ public final class ActivitySettingsBinding implements ViewBinding {
       }
 
       return new ActivitySettingsBinding((ScrollView) rootView, sbNextAppDelay, sbNextSongDelay,
-          sbPausePlayDelay, sbPrevDelay, sbVolDelay, tvNavValue, tvNextSongValue, tvPausePlayValue,
-          tvPrevSongValue, tvTitle, tvVolLabel, tvVolValue);
+          sbPausePlayDelay, sbPrevDelay, sbVolDelay, tvNavLabel, tvNavValue, tvNextSongLabel,
+          tvNextSongValue, tvPausePlayLabel, tvPausePlayValue, tvPrevSongLabel, tvPrevSongValue,
+          tvTitle, tvVolLabel, tvVolValue);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
