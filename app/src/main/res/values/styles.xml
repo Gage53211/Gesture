@@ -20,6 +20,6 @@
     </style>
 
     <style name="AppThemeProgressStyle">
-        <item name="colorAccent">@color/color_primary_variant</item>
+        <item name="colorAccent">@color/color_primary</item>
     </style>
 </resources>
