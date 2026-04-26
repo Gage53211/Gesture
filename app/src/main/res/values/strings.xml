@@ -64,8 +64,6 @@
     <string name="cooldown_between_like_dislike">Cooldown between like/dislike</string>
 
 
-
-
     <string-array name="delegate_spinner_titles">
         <item>CPU</item>
         <item>GPU</item>
@@ -78,41 +76,40 @@
     <string name="previous">Previous</string>
     <string name="back_button">Back Button</string>
 
-    <string name="welcome_help"> Thank you for using Gesture \n Here you will find each gesture supported in this program, and it\'s use for hands free control
+    <string name="welcome_help"> Thank you for using Gesture. \n Here you will find each gesture supported in this program, and it\'s use for hands free control.
     </string>
 
     <string name="open_palm_desc">
-        The open palm is used to pause/stop media
+        The open palm is used to pause/stop media.
     </string>
 
     <string name="side_flat_desc">
-        The side of your hand with your thumb up is used to resume/play media
+        The side of your hand with your thumb up is used to resume/play media.
     </string>
 
     <string name="two_finger_thumb_up_desc">
-        Two fingers pointing right with your thumb up will move to the next media app
+        Two fingers pointing right with your thumb up will move to the next media app.
     </string>
 
     <string name="two_finger_thumb_down_desc">
-        Two fingers pointing right with your thumb down will move to the previous media app
+        Two fingers pointing right with your thumb down will move to the previous media app.
     </string>
 
-
     <string name="thumb_up_desc">
-        A thumbs up will like or dislike a current song
+        A thumbs up will like or dislike a current song.
     </string>
 
     <string name="next_track_desc">
-        The right point with your thumb \n up will skip to the next song
+        The right point with your thumb \n up will skip to the next song.
     </string>
     <string name="prev_track_desc">
-        The right point with your thumb \n down will reverse to the previous song
+        The right point with your thumb \n down will reverse to the previous song.
     </string>
     <string name="vol_up_desc">
-        pointing up with your index \n will increase the volume
+        pointing up with your index \n will increase the volume.
     </string>
     <string name="vol_down_desc">
-        pointing up with your down \n will decrease the volume
+        pointing up with your down \n will decrease the volume.
     </string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
