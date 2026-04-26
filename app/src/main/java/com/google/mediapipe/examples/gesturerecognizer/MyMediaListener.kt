@@ -51,13 +51,19 @@ import kotlin.concurrent.thread
 
 class MyMediaListener : NotificationListenerService() {
     private var activeController: MediaController? = null
+
     private var threadController: MediaController? = null
+
     var volOffset: Int = 1
     val HAPTIC_EFFECT: VibrationEffect = VibrationEffect.createOneShot(100L, 200)
     private var appPos = 0
+
     @Volatile var isWakeUpThreadRunning: Boolean = true
+
     private var vibrator: Vibrator? = null
+
     private var tokens: Array<MediaSession.Token?> = arrayOfNulls(10)
+
     private val audioManager: AudioManager? by lazy {
         getSystemService(AUDIO_SERVICE) as? AudioManager
     }
@@ -402,11 +408,11 @@ class MyMediaListener : NotificationListenerService() {
         if (activeController != null) {
             val metadata = activeController?.metadata
             val playBackInfo = activeController?.playbackState
+            val isPlaying = playBackInfo?.state == 3
 
             intent.putExtra("DURATION", metadata?.getLong(MediaMetadata.METADATA_KEY_DURATION) ?: -1)
             intent.putExtra("CURRENT_POSITION", playBackInfo?.position ?: -1)
-            intent.putExtra("SESSIONS_TRACKED", countActiveTokens())
-            intent.putExtra("STATE", playBackInfo?.state ?: "State Not Available")
+            intent.putExtra("IS_PLAYING", isPlaying)
             sendBroadcast(intent)
         }
     }
