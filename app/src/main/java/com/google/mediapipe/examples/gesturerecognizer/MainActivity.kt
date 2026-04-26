@@ -28,24 +28,97 @@ import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
 import com.google.mediapipe.examples.gesturerecognizer.fragment.PermissionsFragment
+import android.content.BroadcastReceiver
+import android.content.IntentFilter
+import android.graphics.Bitmap
+import android.util.Log
+import java.util.Locale
+import android.os.Handler
+import android.os.Looper
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private var isDialogShowing = false
+    private val handler = Handler(Looper.getMainLooper())
+    private val updateSeekBarTask = object : Runnable {
+        override fun run() {
+            // Increment progress by 1 second
+            activityMainBinding.musicSeekBar.progress += 1
+            activityMainBinding.currentTime.text = formatTime(activityMainBinding.musicSeekBar.progress)
+
+            // Repeat every second
+            handler.postDelayed(this, 1000)
+        }
+    }
+
+    private fun formatTime(seconds: Int): String {
+        val minutes = seconds / 60
+        val remainingSeconds = seconds % 60
+        //return String.format("%02d:%02d", minutes, remainingSeconds)
+        return String.format(Locale.getDefault(), "%02d:%02d", minutes, remainingSeconds)
+    }
+
+    private val musicReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent == null) return
+            when (intent.action) {
+                "ACTION_METADATA" -> {
+                    val title = intent.getStringExtra("TITLE") ?: "No Title Available"
+                    val author = intent.getStringExtra("AUTHOR") ?: "Unknown Artist"
+                    val bitmap = intent.getParcelableExtra<Bitmap>("BITMAP")
+
+                    if (bitmap != null) {
+                        // handle case for no bitmap
+                    }
+                    Log.d("MainActivity", "Title: $title, Author: $author")
+                }
+                "ACTION_PLAYBACK_DATA" -> {
+                    val durationMs = intent.getLongExtra("DURATION", 0L)
+                    val currentPosMs = intent.getLongExtra("CURRENT_POSITION", 0L)
+                    val isPlaying = intent.getBooleanExtra("IS_PLAYING", false)
+
+                    // Convert ms to seconds
+                    val durationSec = (durationMs / 1000).toInt()
+                    val currentSec = (currentPosMs / 1000).toInt()
+
+                    handler.removeCallbacks(updateSeekBarTask)
+                    if (isPlaying) {
+                        handler.postDelayed(updateSeekBarTask, 1000)
+                    }
+
+                    // Update SeekBar
+                    activityMainBinding.musicSeekBar.max = durationSec
+                    activityMainBinding.musicSeekBar.progress = currentSec
+
+                    activityMainBinding.totalTime.text = formatTime(durationSec)
+                    activityMainBinding.currentTime.text = formatTime(currentSec)
+
+                    handler.removeCallbacks(updateSeekBarTask)
+                    if (isPlaying) {
+                        handler.postDelayed(updateSeekBarTask, 1000)
+                    }
+                    Log.d("MainActivity", "Duration: $durationMs, Current Position: $currentPosMs")
+                }
+
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
+        activityMainBinding.musicSeekBar.setOnTouchListener { _, _ -> true }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         WindowCompat.setDecorFitsSystemWindows(window, true)
+
+        checkPermissionsAndTutorial()
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navHostFragment.navController
-
-        checkPermissionsAndTutorial()
 
         val toolbar = findViewById<MaterialToolbar>(R.id.dropdown_menu)
         toolbar.setOnMenuItemClickListener { menuItem ->
@@ -56,6 +129,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        val filter = IntentFilter().apply {
+            addAction("ACTION_METADATA")
+            addAction("ACTION_PLAYBACK_DATA")
+        }
+        registerReceiver(musicReceiver, filter, RECEIVER_EXPORTED)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(musicReceiver)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(updateSeekBarTask)
+    }
+
 
     override fun onResume() {
         super.onResume()
@@ -83,6 +176,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // needs to be kept
     private fun showMandatoryDialog(missingNotification: Boolean) {
         isDialogShowing = true
         AlertDialog.Builder(this)
