@@ -5,11 +5,9 @@
     android:id="@+id/activityTutorial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TutorialActivity"
+    android:fitsSystemWindows="true"
     android:background="@color/color_primary"
-    >
-
-
+    tools:context=".TutorialActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,16 +17,6 @@
 
         <!-- The back button to the main camera-->
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/color_secondary"
-            android:gravity="center"
-            android:text="@string/back_button"
-            android:textColor="@color/Textcolor"
-            android:textSize="20sp"
-            />
 
         <!-- Everything below this is a template for making a new "card" -->
         <com.google.android.material.card.MaterialCardView
@@ -50,6 +38,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/welcome_help"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/Textcolor" />
 
 
@@ -77,24 +66,34 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="OPEN PALM"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_open_palm"
-                    android:contentDescription="open palm picture"
-                    android:paddingTop="40dp"
-                    android:paddingBottom="40dp"
-                    android:rotation="90"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/open_palm" />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_open_palm"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:contentDescription="open palm picture"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/open_palm" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
+                    android:paddingBottom="6dp"
                     android:text="@string/open_palm_desc"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/Textcolor" />
 
             </LinearLayout>
@@ -120,21 +119,33 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Flat Side of Hand (Thumb up)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_side_flat"
-                    android:contentDescription="side of hand with thumb picture"
-
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/flat_hand_side" />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_side_flat"
+                        android:contentDescription="side of hand with thumb picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/flat_hand_side" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:paddingBottom="6dp"
                     android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/side_flat_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -162,20 +173,34 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Right Point (thumb up)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_next_track"
-                    android:layout_width="match_parent"
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/next_track"
-                    android:contentDescription="next track picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_next_track"
+                        android:contentDescription="next track picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/next_track" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/next_track_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -201,20 +226,33 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Right Point (thumb down)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_prev_track"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/prev_track"
-                    android:contentDescription="previous track picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_prev_track"
+                        android:contentDescription="previous track picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/prev_track" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/prev_track_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -240,20 +278,34 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Index Finger Up"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_vol_up"
-                    android:layout_width="match_parent"
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/vol_up"
-                    android:contentDescription="volume up picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_vol_up"
+                        android:contentDescription="volume up picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/vol_up" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/vol_up_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -279,20 +331,34 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Index Finger Down"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_vol_down"
-                    android:layout_width="match_parent"
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/vol_down"
-                    android:contentDescription="volume down picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_vol_down"
+                        android:contentDescription="volume down picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/vol_down" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/vol_down_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -318,20 +384,33 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Right two finger point (thumb up)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_next_app"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/two_finger_point_thumb_up"
-                    android:contentDescription="next app picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_next_app"
+                        android:contentDescription="next app picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/two_finger_point_thumb_up" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/next_track_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -357,20 +436,33 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Two Finger (Thumb Down)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_two_finger_point_thumb_down"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/two_finger_thumb_down"
-                    android:contentDescription="two finger thumb down picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_two_finger_point_thumb_down"
+                        android:contentDescription="two finger thumb down picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/two_finger_thumb_down" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/two_finger_thumb_down_desc"
                     android:textColor="@color/Textcolor" />
 
@@ -396,20 +488,33 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Thumbs Up"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/Textcolor" />
 
-                <ImageView
-                    android:id="@+id/imageView_thumb_up"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/like_dislike_thumbs_up"
-                    android:contentDescription="thumb up picture"
-                    />
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_thumb_up"
+                        android:contentDescription="thumb up picture"
+                        android:layout_width="318dp"
+                        android:layout_height="419dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/like_dislike_thumbs_up" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:text="@string/thumb_up_desc"
                     android:textColor="@color/Textcolor" />
 
