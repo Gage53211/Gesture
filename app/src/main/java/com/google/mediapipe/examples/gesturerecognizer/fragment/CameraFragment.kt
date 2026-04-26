@@ -1,18 +1,18 @@
 /*
- * Copyright 2022 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *             http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright 2022 The TensorFlow Authors. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*             http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 package com.google.mediapipe.examples.gesturerecognizer.fragment
 
 import android.annotation.SuppressLint
@@ -41,8 +41,8 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import androidx.navigation.findNavController
-
-
+import com.google.mediapipe.tasks.components.containers.Category
+import kotlin.concurrent.thread
 
 class CameraFragment : Fragment(),
     GestureRecognizerHelper.GestureRecognizerListener {
@@ -56,6 +56,9 @@ class CameraFragment : Fragment(),
     private val fragmentCameraBinding
         get() = _fragmentCameraBinding!!
 
+    private var currentDelay: Long = 1000L
+    private var gestureCategories: List<List<Category?>?>? = null
+    private var gestureResult: Category? = null
     private lateinit var gestureRecognizerHelper: GestureRecognizerHelper
     private val viewModel: MainViewModel by activityViewModels()
     private var defaultNumResults = 1
@@ -65,22 +68,24 @@ class CameraFragment : Fragment(),
         }
     }
     private var preview: Preview? = null
+
+    @Volatile var threadRunning: Boolean = true
+
+    @Volatile var doesThreadExist: Boolean = false
+
     private var imageAnalyzer: ImageAnalysis? = null
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
-
-    private var lastGestureSeen = 0L
     private var pausePlayDelay = 1500L
     private var volumeDelay = 500L
     private var prevDelay = 1500L
     private var nextDelay = 1900L
-    private var noHandRecoginzedDelay = 2000L
+    private var noHandRecognizedDelay = 2000L
     private var nextAppDelay = 3000L
     private var likeDislikeDelay = 1500L
 
-
-
+    
     //Get user custom delays
     private fun loadSettings(){
         val prefs = requireContext().getSharedPreferences("GestureSettings", android.content.Context.MODE_PRIVATE)
@@ -92,17 +97,26 @@ class CameraFragment : Fragment(),
         likeDislikeDelay = prefs.getInt("like_dislike_delay", 1500).toLong()
     }
 
+
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
+
     override fun onResume() {
         super.onResume()
+        threadRunning = true
+
+        if (!doesThreadExist){
+            delayThread()
+        }
+
         loadSettings()
         // Make sure that all permissions are still present, since the
         // user could have removed them while the app was in paused state.
         if (!PermissionsFragment.hasPermissions(requireContext())) {
             requireActivity().findNavController(R.id.fragment_container).navigate(R.id.action_camera_to_permissions)
         }
+
 
         // Start the GestureRecognizerHelper again when users come back
         // to the foreground.
@@ -113,29 +127,34 @@ class CameraFragment : Fragment(),
         }
     }
 
+
     override fun onPause() {
         super.onPause()
+        threadRunning = false
         if (this::gestureRecognizerHelper.isInitialized) {
             viewModel.setMinHandDetectionConfidence(gestureRecognizerHelper.minHandDetectionConfidence)
             viewModel.setMinHandTrackingConfidence(gestureRecognizerHelper.minHandTrackingConfidence)
             viewModel.setMinHandPresenceConfidence(gestureRecognizerHelper.minHandPresenceConfidence)
             viewModel.setDelegate(gestureRecognizerHelper.currentDelegate)
 
+
             // Close the Gesture Recognizer helper and release resources
             backgroundExecutor.execute { gestureRecognizerHelper.clearGestureRecognizer() }
         }
     }
 
+
     override fun onDestroyView() {
         _fragmentCameraBinding = null
         super.onDestroyView()
-
+        threadRunning = false
         // Shut down our background executor
         backgroundExecutor.shutdown()
         backgroundExecutor.awaitTermination(
             Long.MAX_VALUE, TimeUnit.NANOSECONDS
         )
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -145,8 +164,10 @@ class CameraFragment : Fragment(),
         _fragmentCameraBinding =
             FragmentCameraBinding.inflate(inflater, container, false)
 
+
         return fragmentCameraBinding.root
     }
+
 
     @SuppressLint("MissingPermission")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -156,14 +177,17 @@ class CameraFragment : Fragment(),
             adapter = gestureRecognizerResultAdapter
         }
 
+
         // Initialize our background executor
         backgroundExecutor = Executors.newSingleThreadExecutor()
+
 
         // Wait for the views to be properly laid out
         fragmentCameraBinding.viewFinder.post {
             // Set up the camera and its use cases
             setUpCamera()
         }
+
 
         // Create the Hand Gesture Recognition Helper that will handle the
         // inference
@@ -178,9 +202,8 @@ class CameraFragment : Fragment(),
                 gestureRecognizerListener = this
             )
         }
-
-
     }
+
 
     // Initialize CameraX, and prepare to bind the camera use cases
     private fun setUpCamera() {
@@ -191,22 +214,27 @@ class CameraFragment : Fragment(),
                 // CameraProvider
                 cameraProvider = cameraProviderFuture.get()
 
+
                 // Build and bind the camera use cases
                 bindCameraUseCases()
             }, ContextCompat.getMainExecutor(requireContext())
         )
     }
 
+
     // Declare and bind preview, capture and analysis use cases
     @SuppressLint("UnsafeOptInUsageError")
     private fun bindCameraUseCases() {
+
 
         // CameraProvider
         val cameraProvider = cameraProvider
             ?: throw IllegalStateException("Camera initialization failed.")
 
+
         val cameraSelector =
             CameraSelector.Builder().requireLensFacing(cameraFacing).build()
+
 
         val resolutionSelector = ResolutionSelector.Builder()
             .setAspectRatioStrategy(
@@ -217,10 +245,12 @@ class CameraFragment : Fragment(),
             )
             .build()
 
+
         // Preview. Only using the 4:3 ratio because this is the closest to our models
         preview = Preview.Builder().setResolutionSelector(resolutionSelector)
             .setTargetRotation(fragmentCameraBinding.viewFinder.display.rotation)
             .build()
+
 
         // ImageAnalysis. Using RGBA 8888 to match how our models work
         imageAnalyzer = ImageAnalysis.Builder()
@@ -235,8 +265,10 @@ class CameraFragment : Fragment(),
                 }
             }
 
+
         // Must unbind the use-cases before rebinding them
         cameraProvider.unbindAll()
+
 
         try {
             // A variable number of use-cases can be passed here -
@@ -245,6 +277,7 @@ class CameraFragment : Fragment(),
                 this, cameraSelector, preview, imageAnalyzer
             )
 
+
             // Attach the viewfinder's surface provider to preview use case
             preview?.surfaceProvider = fragmentCameraBinding.viewFinder.surfaceProvider
         } catch (exc: Exception) {
@@ -252,11 +285,13 @@ class CameraFragment : Fragment(),
         }
     }
 
+
     private fun recognizeHand(imageProxy: ImageProxy) {
         gestureRecognizerHelper.recognizeLiveStream(
             imageProxy = imageProxy,
         )
     }
+
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
@@ -264,53 +299,30 @@ class CameraFragment : Fragment(),
             fragmentCameraBinding.viewFinder.display.rotation
     }
 
-    // Update UI after a hand gesture has been recognized. Extracts original
-    // image height/width to scale and place the landmarks properly through
-    // OverlayView. Only one result is expected at a time. If two or more
-    // hands are seen in the camera frame, only one will be processed.
-    //Should control phone using gestures
-    //Delays for different controls volume is 500ms delay while others have a one second delay
-
-
     override fun onResults(
         resultBundle: GestureRecognizerHelper.ResultBundle
     ) {
         activity?.runOnUiThread {
             if (_fragmentCameraBinding != null) {
                 // Show result of recognized gesture
-                val gestureCategories = resultBundle.results.first().gestures()
-                val gestureResult = gestureCategories.firstOrNull()?.firstOrNull()
-                val timestart = System.currentTimeMillis()
-                val currentdelay = when(gestureResult?.categoryName()){
+                gestureCategories = resultBundle.results.first().gestures()
+                gestureResult = gestureCategories?.firstOrNull()?.firstOrNull()
+                currentDelay = when(gestureResult?.categoryName()){
                     "vol_up" -> volumeDelay
                     "vol_down" -> volumeDelay
                     "prev_track" -> prevDelay
                     "next_track" -> nextDelay
-                    "none" -> noHandRecoginzedDelay
+                    "none" -> noHandRecognizedDelay
                     "next_app" -> nextAppDelay
                     "prev_app" -> nextAppDelay
                     "like" -> likeDislikeDelay
                     else -> pausePlayDelay
                 }
-                    if (gestureCategories.isNotEmpty() && (timestart - lastGestureSeen) > currentdelay) {
-                        lastGestureSeen = timestart
-                        when (gestureResult?.categoryName()) {
-                            "pause" -> pause()
-                            "play" -> play()
-                            "vol_up" -> volumeUp()
-                            "vol_down" -> volumeDown()
-                            "prev_track" -> prevTrack()
-                            "next_track" -> nextTrack()
-                            "next_app" -> nextApp()
-                            "prev_app" -> prevApp()
-                            "like" -> likeDislike()
-                        }
-                    }
-                if (gestureCategories.isEmpty()) {
+                if (gestureCategories?.isEmpty() == true) {
                     gestureRecognizerResultAdapter.updateResults(emptyList())
                 }else{
                     gestureRecognizerResultAdapter.updateResults(
-                        gestureCategories.first()
+                        gestureCategories?.first() as List<Category>?
                     )
                 }
             }
@@ -325,30 +337,61 @@ class CameraFragment : Fragment(),
             fragmentCameraBinding.overlay.invalidate()
         }
     }
+
+    private fun delayThread() {
+        thread {
+            doesThreadExist = true
+            while (threadRunning) {
+                Thread.sleep(currentDelay)
+                if (threadRunning) {
+                    when (gestureResult?.categoryName()) {
+                        "pause" -> pause()
+                        "play" -> play()
+                        "vol_up" -> volumeUp()
+                        "vol_down" -> volumeDown()
+                        "prev_track" -> prevTrack()
+                        "next_track" -> nextTrack()
+                        "next_app" -> nextApp()
+                        "prev_app" -> prevApp()
+                        "like" -> likeDislike()
+                        null -> println("No Gesture")
+                    }
+                }
+            }
+            doesThreadExist = false
+        }
+    }
+
     private fun volumeUp(){
         val intent = Intent("ACTION_VOLUME_UP")
         context?.sendBroadcast(intent)
     }
+
     private fun volumeDown(){
         val intent = Intent("ACTION_VOLUME_DOWN")
         context?.sendBroadcast(intent)
     }
+
     private fun pause(){
         val intent = Intent("ACTION_PAUSE")
         context?.sendBroadcast(intent)
     }
+
     private fun play(){
         val intent = Intent("ACTION_PLAY")
         context?.sendBroadcast(intent)
     }
+
     private fun nextTrack(){
         val intent = Intent("ACTION_SKIP")
         context?.sendBroadcast(intent)
     }
+
     private fun prevTrack(){
         val intent = Intent("ACTION_PREV")
         context?.sendBroadcast(intent)
     }
+
     private fun nextApp() {
         val intent = Intent("ACTION_NEXT_APP")
         context?.sendBroadcast(intent)
