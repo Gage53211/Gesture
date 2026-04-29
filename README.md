@@ -7,26 +7,33 @@ They are as follows...
 
 | **Flat Hand Side** | **Open Hand** |
 |---|---|
-|![Play](https://github.com/user-attachments/assets/2e6c2b06-c2f8-4cc3-b6e2-864dca02916a)| ![Open_Palm](https://github.com/user-attachments/assets/d377c8a4-d126-4e67-939b-de20c0cec7dd) |
+|![Play](https://github.com/user-attachments/assets/3f11e1e6-d037-4fe3-aeed-756c76d8c6e3)| ![Open_Palm](https://github.com/user-attachments/assets/2d595e45-6159-4f87-8892-5057db2925ed) |
 | *Play music* | *Pause music* |
+
+
 
 | **One Finger point (with thumb)**| **One finger point (no thumb)** |
 |---|---|
-| ![nexttrack](https://github.com/user-attachments/assets/ff60ef60-6982-4afb-8969-9b3d8e18ccbe)|  ![prevtrack](https://github.com/user-attachments/assets/7f8dd320-9cee-4d0e-bdbf-d2837d51d048)|
+| ![nexttrack](https://github.com/user-attachments/assets/ca6d350d-efa2-484a-b096-f682a507d1d1)|  ![prevtrack](https://github.com/user-attachments/assets/dcedeb41-06fa-4010-8de7-d534687d8a4f)|
 | *Next Song* | *Previous Song* |
 
 
 | **Point Up**| **Point Down** |
 |---|---|
-|![pointing_up](https://github.com/user-attachments/assets/c5b0a74d-8ce4-4d12-9f8b-f603e059ce12)| ![VolumeDown](https://github.com/user-attachments/assets/76b7dade-81e6-4bc1-9065-1e26113a22c7)|
+|![pointing_up](https://github.com/user-attachments/assets/0034449d-c20d-4ca4-bafd-d73449d3aefd)| ![VolumeDown](https://github.com/user-attachments/assets/df43c827-c41a-4b70-98b9-847cc1ea402a)|
 | *Volume Up* | *Volume Down* |
 
 
-| **Two finger point (with thumb)**|
-|---|
-| ![nextapp](https://github.com/user-attachments/assets/78ba8d56-8adf-4f1a-90c8-dfe6c01e5343)|
-| *Go to next app* | 
+| **Two finger point (with thumb)**|  **Two finger point (no thumb)** |
+|---|---|
+|![pointing_up](https://github.com/user-attachments/assets/a3209a17-ab9c-4a76-a091-13d3bbae2602)| ![VolumeDown](https://github.com/user-attachments/assets/03601929-e1c0-46cc-8d11-a64a6e95f190)|
+| *Next App* | *Previous App* |
 
+
+| **Thumbs Up**|
+|---|
+|![pointing_up](https://github.com/user-attachments/assets/12f0e1e2-4bee-44e9-8b02-02475f1863f7)| 
+| *Like Song / Dislike Song* | 
 
 
 # How to Use / Permissions (PLEASE READ) 
