@@ -29,7 +29,7 @@ They are as follows...
 
 
 
-# How to Use / Permissions
+# How to Use / Permissions (PLEASE READ) 
 
 In order to use the app and for the Mediapipe model to interact with the Android device, it needs the "Notification read, reply & control" permission, which is listed as a restricted permission. 
 The app should direct you to the settings for you to turn it on, but the option may be greyed out. If this is the case, then you will need to follow your phone's directions
